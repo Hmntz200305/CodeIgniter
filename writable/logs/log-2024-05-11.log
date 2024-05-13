@@ -1,0 +1,26 @@
+CRITICAL - 2024-05-11 08:58:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/DataCriteria/datacriteria.php"
+[Method: GET, Route: datacriteria]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/DataCriteria/datacriteria.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/DataCriteria/datacriteria', [], true)
+ 3 APPPATH\Controllers\DataCriteria.php(9): view('page/DataCriteria/datacriteria')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataCriteria->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataCriteria))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\testwebsite\\project-root\\public\\index.php')
+CRITICAL - 2024-05-11 08:58:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/DataCriteria/datacriteria.php"
+[Method: GET, Route: datacriteria]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/DataCriteria/datacriteria.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/DataCriteria/datacriteria', [], true)
+ 3 APPPATH\Controllers\DataCriteria.php(9): view('page/DataCriteria/datacriteria')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DataCriteria->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataCriteria))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\testwebsite\\project-root\\public\\index.php')
