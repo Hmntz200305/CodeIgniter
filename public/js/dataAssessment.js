@@ -35,24 +35,83 @@ $(document).ready(function() {
 
 // MODAL DELETE
 const modalDeleteDataAssessment = document.querySelector('.modalDeleteDataAssessment');
-const modalDeleteDataAssessmentOpen = document.getElementById('modalDeleteDataAssessmentOpen');
+const modalDeleteDataAssessmentOpen = document.querySelectorAll('.dataassesment-delete-btn');
 const modalDeleteDataAssessmentClose = document.getElementById('modalDeleteDataAssessmentClose');
 
-modalDeleteDataAssessmentOpen.addEventListener('click', () => {
-    modalDeleteDataAssessment.classList.toggle('hidden');
+modalDeleteDataAssessmentOpen.forEach(button => {
+    button.addEventListener('click', () => {
+        const id_penilaian = button.dataset.id;
+        modalDeleteDataAssessment.classList.remove('hidden');
+
+        const deleteButton = document.getElementById('modalDeleteButtonDataAssessment');
+        deleteButton.addEventListener('click', () => {
+            confirmDeletePenilaian(id_penilaian);
+        });
+    });
 });
+
 modalDeleteDataAssessmentClose.addEventListener('click', () => {
     modalDeleteDataAssessment.classList.add('hidden');
 });
 
+// FUNCTION DELETE
+function confirmDeletePenilaian(id) {
+    fetch("dataassessment/deleteprocess/" + id, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = "dataassessment"
+        } else {
+            pass
+        }
+    })
+    .catch(error => {
+        // Kesalahan dalam melakukan permintaan, lakukan sesuatu jika perlu
+        console.error("Terjadi kesalahan:", error);
+    });
+}
+
 // MODAL CLEAR
 const modalClearDataAssessment = document.querySelector('.modalClearDataAssessment');
-const modalClearDataAssessmentOpen = document.getElementById('modalClearDataAssessmentOpen');
+const modalClearDataAssessmentOpen = document.querySelectorAll('.cleartable-btn');
 const modalClearDataAssessmentClose = document.getElementById('modalClearDataAssessmentClose');
 
-modalClearDataAssessmentOpen.addEventListener('click', () => {
-    modalClearDataAssessment.classList.toggle('hidden');
+modalClearDataAssessmentOpen.forEach(button => {
+    button.addEventListener('click', () => {
+        modalClearDataAssessment.classList.remove('hidden');
+
+        const deleteButton = document.getElementById('modalClearTableButtonDataAssessment');
+        deleteButton.addEventListener('click', () => {
+            confirmClearTablePenilaian();
+        });
+    });
 });
+
+
 modalClearDataAssessmentClose.addEventListener('click', () => {
     modalClearDataAssessment.classList.add('hidden');
 });
+
+// FUNCTION CLEAR TABLE
+function confirmClearTablePenilaian() {
+    fetch("dataassessment/clearprocess", {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = "dataassessment"
+        } else {
+            pass
+        }
+    })
+    .catch(error => {
+        // Kesalahan dalam melakukan permintaan, lakukan sesuatu jika perlu
+        console.error("Terjadi kesalahan:", error);
+    });
+}
+
+// FUNCTION EDIT
+function showEditAssessment(id) {
+    window.location.href = "dataassessment/editdata/" + id;
+}

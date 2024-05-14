@@ -58,7 +58,7 @@
                             <button onclick="showEditAlternative(<?php echo $row['id_alternatif']; ?>)" class="text-green-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
                                 <i class="ri-edit-circle-line"></i>
                             </button>
-                            <button class="delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $row['id_alternatif']; ?>">
+                            <button class="dataalternatif-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $row['id_alternatif']; ?>">
                                 <i class="ri-delete-bin-3-line"></i>
                             </button>
                         </div>

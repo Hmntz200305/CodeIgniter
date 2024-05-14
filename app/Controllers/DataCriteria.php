@@ -121,11 +121,11 @@ class DataCriteria extends BaseController
         $isKodeUnique = true;
         $isDescUnique = true;
 
-        if ($kode_kriteria !== $kriteria[0]['kode_kriteria']) {
+        if ($kode_kriteria !== $kriteria['kode_kriteria']) {
             $isKodeUnique = $this->kriteriaModel->isUnique('kode_kriteria', $kode_kriteria);
         }
 
-        if ($deskripsi_kriteria !== $kriteria[0]['deskripsi_kriteria']) {
+        if ($deskripsi_kriteria !== $kriteria['deskripsi_kriteria']) {
             $isDescUnique = $this->kriteriaModel->isUnique('deskripsi_kriteria', $deskripsi_kriteria);
         }
 

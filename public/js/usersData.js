@@ -34,12 +34,44 @@ $(document).ready(function() {
 
 
 const modalDeleteUsers = document.querySelector('.modalDeleteUsers');
-const modalDeleteUsersOpen = document.getElementById('modalDeleteUsersOpen');
+const modalDeleteUsersOpen = document.querySelectorAll('.userdata-delete-btn');
 const modalDeleteUsersClose = document.getElementById('modalDeleteUsersClose');
 
-modalDeleteUsersOpen.addEventListener('click', () => {
-    modalDeleteUsers.classList.toggle('hidden');
+modalDeleteUsersOpen.forEach(button => {
+    button.addEventListener('click', () => {
+        const id_user = button.dataset.id;
+        modalDeleteUsers.classList.remove('hidden');
+
+        const deleteButton = document.getElementById('modalDeleteButtonUsers');
+        deleteButton.addEventListener('click', () => {
+            confirmDeleteUser(id_user);
+        });
+    });
 });
+
 modalDeleteUsersClose.addEventListener('click', () => {
     modalDeleteUsers.classList.add('hidden');
 });
+
+// FUNCTION DELETE
+function confirmDeleteUser(id) {
+    fetch("usersdata/deleteprocess/" + id, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = "usersdata"
+        } else {
+            pass
+        }
+    })
+    .catch(error => {
+        // Kesalahan dalam melakukan permintaan, lakukan sesuatu jika perlu
+        console.error("Terjadi kesalahan:", error);
+    });
+}
+
+// FUNCTION EDIT
+function showEditUser(id) {
+    window.location.href = "usersdata/editUsers/" + id;
+}

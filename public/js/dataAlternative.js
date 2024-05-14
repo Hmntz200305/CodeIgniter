@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 // MODAL DELETE
 const modalDeleteAlternative = document.querySelector('.modalDeleteAlternative');
-const modalDeleteAlternativeOpen = document.querySelectorAll('.delete-btn');
+const modalDeleteAlternativeOpen = document.querySelectorAll('.dataalternatif-delete-btn');
 const modalDeleteAlternativeClose = document.getElementById('modalDeleteAlternativeClose');
 
 modalDeleteAlternativeOpen.forEach(button => {

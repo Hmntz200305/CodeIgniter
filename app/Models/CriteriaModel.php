@@ -12,7 +12,8 @@ class CriteriaModel extends Model
 
     public function getKriteria($id_kriteria)
     {
-        $get = $this->where('id_kriteria', $id_kriteria)->findAll();
+        $get = $this->where('id_kriteria', $id_kriteria)
+            ->first();
 
         return $get;
     }
@@ -27,14 +28,6 @@ class CriteriaModel extends Model
 
     public function addProcess($kode_kriteria, $deskripsi_kriteria, $bobot_kriteria)
     {
-        $check = $this->where('kode_kriteria', $kode_kriteria)
-            ->orWhere('deskripsi_kriteria', $deskripsi_kriteria)
-            ->first();
-
-        if ($check) {
-            return false;
-        }
-
         $data = [
             'kode_kriteria' => $kode_kriteria,
             'deskripsi_kriteria' => $deskripsi_kriteria,
@@ -42,8 +35,6 @@ class CriteriaModel extends Model
         ];
 
         $this->insert($data);
-
-        return true;
     }
 
     public function editProcess($id_kriteria, $kode_kriteria, $deskripsi_kriteria,  $bobot_kriteria)

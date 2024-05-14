@@ -10,14 +10,15 @@ class DataAlternative extends BaseController
 
     public function __construct()
     {
-        $this->alternatifModel = new \App\Models\AlternatifModel();
+        $this->alternatifModel = new \App\Models\AlternativeModel();
     }
 
     public function index()
     {
         $DataTable = $this->alternatifModel->findAll();
+
         $data = [
-            'Alternatif' => $DataTable
+            'Alternatif' => $DataTable,
         ];
 
         return view('page/DataAlternative/index', $data);
@@ -117,11 +118,11 @@ class DataAlternative extends BaseController
         $isKodeUnique = true;
         $isNamaUnique = true;
 
-        if ($kode_alternatif !== $alternatif[0]['kode_alternatif']) {
+        if ($kode_alternatif !== $alternatif['kode_alternatif']) {
             $isKodeUnique = $this->alternatifModel->isUnique('kode_alternatif', $kode_alternatif);
         }
 
-        if ($nama_alternatif !== $alternatif[0]['nama_alternatif']) {
+        if ($nama_alternatif !== $alternatif['nama_alternatif']) {
             $isNamaUnique = $this->alternatifModel->isUnique('nama_alternatif', $nama_alternatif);
         }
 

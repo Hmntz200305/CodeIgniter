@@ -32,6 +32,8 @@ class Login extends BaseController
             $userData = [
                 'user_id' => $user['id_user'],
                 'username' => $user['username'],
+                'name' => $user['nama'],
+                'id_user_level' => $user['id_user_level'],
                 'logged_in' => true
             ];
 

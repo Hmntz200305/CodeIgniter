@@ -60,7 +60,7 @@
                             <button onclick="showEditCriteria(<?php echo $row['id_kriteria']; ?>)" class="text-green-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
                                 <i class="ri-edit-circle-line"></i>
                             </button>
-                            <button class="delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $row['id_kriteria']; ?>">
+                            <button class="datacriteria-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $row['id_kriteria']; ?>">
                                 <i class="ri-delete-bin-3-line"></i>
                             </button>
                         </div>

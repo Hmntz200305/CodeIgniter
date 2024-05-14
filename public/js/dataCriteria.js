@@ -34,7 +34,7 @@ $(document).ready(function() {
 
 // MODAL
 const modalDeleteCriteria = document.querySelector('.modalDeleteCriteria');
-const modalDeleteCriteriaOpen = document.querySelectorAll('.delete-btn');
+const modalDeleteCriteriaOpen = document.querySelectorAll('.datacriteria-delete-btn');
 const modalDeleteCriteriaClose = document.getElementById('modalDeleteCriteriaClose');
 
 modalDeleteCriteriaOpen.forEach(button => {
