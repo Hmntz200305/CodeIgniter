@@ -53,8 +53,6 @@ class DataAssessment extends BaseController
         $data = [
             'alternatif' => $alternatif,
             'kriteria' => $kriteria,
-            'message' => $this->session->getFlashdata('message'),
-            'message_type' => $this->session->getFlashdata('message_type')
         ];
 
         return view('page/DataAssessment/addData', $data);
@@ -126,28 +124,28 @@ class DataAssessment extends BaseController
         $delete = $this->penialianModel->delete($id_penilaian);
 
         if ($delete) {
-            $response = array('ShowAlert' => 1, 'msg' => 'Penilaian Alternatif berhasil dihapus');
-            $this->session->setFlashdata('message', 'Berhasil menghapus penilaian!');
-            $this->session->setFlashdata('message_type', 'error');
+            session()->setFlashdata('message', 'Penilaian Alternatif berhasil dihapus');
+            session()->setFlashdata('message_type', 'success');
             return redirect()->back();
         } else {
-            $response = array('ShowAlert' => 2, 'msg' => 'Gagal menghapus data');
-            $this->session->setFlashdata('message', 'Gagal menyimpan data!');
-            $this->session->setFlashdata('message_type', 'error');
+            session()->setFlashdata('message', 'Gagal menghapus data');
+            session()->setFlashdata('message_type', 'error');
             return redirect()->back();
         }
     }
-
-
 
     public function clearprocess()
     {
         $truncate = $this->penialianModel->truncateTable('penilaian');
 
         if ($truncate) {
-            return redirect()->to('/dataassessment');
+            session()->setFlashdata('message', 'Table berhasil dibersihkan');
+            session()->setFlashdata('message_type', 'success');
+            return redirect()->back();
         } else {
-            echo "Failed to delete data.";
+            session()->setFlashdata('message', 'Gagal membersihkan table');
+            session()->setFlashdata('message_type', 'error');
+            return redirect()->back();
         }
     }
 

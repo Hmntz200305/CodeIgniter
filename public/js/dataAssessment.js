@@ -33,83 +33,32 @@ $(document).ready(function() {
     });
 });
 
-// MODAL DELETE
-const modalDeleteDataAssessment = document.querySelector('.modalDeleteDataAssessment');
-const modalDeleteDataAssessmentOpen = document.querySelectorAll('.dataassesment-delete-btn');
-const modalDeleteDataAssessmentClose = document.getElementById('modalDeleteDataAssessmentClose');
-
-modalDeleteDataAssessmentOpen.forEach(button => {
-    button.addEventListener('click', () => {
-        const id_penilaian = button.dataset.id;
-        modalDeleteDataAssessment.classList.remove('hidden');
-
-        const deleteButton = document.getElementById('modalDeleteButtonDataAssessment');
-        deleteButton.addEventListener('click', () => {
-            confirmDeletePenilaian(id_penilaian);
-        });
+function showConfirmationDeleteModal(form) {
+    document.getElementById('modalDeleteDataAssessment').classList.remove('hidden');
+    document.getElementById('modalDeleteButtonDataAssessment').addEventListener('click', function() {
+        form.submit();
     });
-});
 
-modalDeleteDataAssessmentClose.addEventListener('click', () => {
-    modalDeleteDataAssessment.classList.add('hidden');
-});
-
-// FUNCTION DELETE
-function confirmDeletePenilaian(id) {
-    fetch("dataassessment/deleteprocess/" + id, {
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (response.ok) {
-            pass
-        } else {
-            pass
-        }
-    })
-    .catch(error => {
-        // Kesalahan dalam melakukan permintaan, lakukan sesuatu jika perlu
-        console.error("Terjadi kesalahan:", error);
+    document.getElementById('modalDeleteDataAssessmentClose').addEventListener('click', function() {
+        // Sembunyikan modal
+        document.getElementById('modalDeleteDataAssessment').classList.add('hidden');
     });
+    return false;
 }
 
-// MODAL CLEAR
-const modalClearDataAssessment = document.querySelector('.modalClearDataAssessment');
-const modalClearDataAssessmentOpen = document.querySelectorAll('.cleartable-btn');
-const modalClearDataAssessmentClose = document.getElementById('modalClearDataAssessmentClose');
-
-modalClearDataAssessmentOpen.forEach(button => {
-    button.addEventListener('click', () => {
-        modalClearDataAssessment.classList.remove('hidden');
-
-        const deleteButton = document.getElementById('modalClearTableButtonDataAssessment');
-        deleteButton.addEventListener('click', () => {
-            confirmClearTablePenilaian();
-        });
+function showConfirmationClearModal(form) {
+    document.getElementById('modalClearDataAssessment').classList.remove('hidden');
+    document.getElementById('modalClearTableButtonDataAssessment').addEventListener('click', function() {
+        form.submit();
     });
-});
 
-
-modalClearDataAssessmentClose.addEventListener('click', () => {
-    modalClearDataAssessment.classList.add('hidden');
-});
-
-// FUNCTION CLEAR TABLE
-function confirmClearTablePenilaian() {
-    fetch("dataassessment/clearprocess", {
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (response.ok) {
-            window.location.href = "dataassessment"
-        } else {
-            pass
-        }
-    })
-    .catch(error => {
-        // Kesalahan dalam melakukan permintaan, lakukan sesuatu jika perlu
-        console.error("Terjadi kesalahan:", error);
+    document.getElementById('modalClearDataAssessmentClose').addEventListener('click', function() {
+        // Sembunyikan modal
+        document.getElementById('modalClearDataAssessment').classList.add('hidden');
     });
+    return false;
 }
+
 
 // FUNCTION EDIT
 function showEditAssessment(id) {
