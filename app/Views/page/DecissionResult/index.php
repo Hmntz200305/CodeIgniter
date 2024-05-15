@@ -18,15 +18,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="inline-flex items-center">
-                <span class="font-semibold text-sm text-rose-600">Admin</span>
-            </div>
+            <?= view('layout/profile'); ?>
         </div>
     </div>
     <div class="px-4">
         <div class="p-2 flex flex-col">
             <span class="text-lg font-bold">Vendor/Suplier performance data</span>
-            <span class="text-sm">???</span>
+            <span class="text-sm">Viewing outcomes and conclusions derived from data analysis to inform decision-making processes.</span>
         </div>
     </div>
 

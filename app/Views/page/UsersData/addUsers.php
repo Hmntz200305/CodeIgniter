@@ -24,16 +24,14 @@
                 </li>
             </ul>
         </div>
-        <div class="inline-flex items-center">
-            <span class="font-semibold text-sm text-rose-600">Admin</span>
-        </div>
+        <?= view('layout/profile'); ?>
     </div>
 </div>
 
 <div class="px-4">
     <div class="p-2 flex flex-col">
         <span class="text-lg font-bold">Add Users</span>
-        <span class="text-sm">???</span>
+        <span class="text-sm">Facilitating the addition of new users to the system, including defining roles and access permissions.</span>
     </div>
 </div>
 

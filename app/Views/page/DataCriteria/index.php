@@ -18,15 +18,13 @@
                 </li>
             </ul>
         </div>
-        <div class="inline-flex items-center">
-            <span class="font-semibold text-sm text-rose-600">Admin</span>
-        </div>
+        <?= view('layout/profile'); ?>
     </div>
 </div>
 <div class="px-4">
     <div class="p-2 flex flex-col">
         <span class="text-lg font-bold">Data Criteria</span>
-        <span class="text-sm">???</span>
+        <span class="text-sm">Defining specific criteria for refining data selection and analysis.</span>
     </div>
 </div>
 
@@ -41,11 +39,11 @@
     <table id="dataCriteria" class="display nowrap" style="width:100%">
         <thead class="text-sm font-bold">
             <tr>
-                <th>No.</th>
+                <th class="w-12">No.</th>
                 <th>Code</th>
                 <th>Criteria</th>
                 <th>Weight</th>
-                <th>Action</th>
+                <th class="w-24">Action</th>
             </tr>
         </thead>
         <tbody class="text-sm font-thin">

@@ -13,16 +13,17 @@
                 </li>
             </ul>
         </div>
-        <div class="inline-flex items-center">
+        <!-- <div class="inline-flex items-center">
             <span class="font-semibold text-sm text-rose-600"><?= $username ?></span>
-        </div>
+        </div> -->
+        <?= view('layout/profile'); ?>
     </div>
 </div>
 
 <div class="px-4">
     <div class="p-2 flex flex-col">
         <span class="text-lg font-bold">Dashboard</span>
-        <span class="text-sm">Visuallization of the data into Card.</span>
+        <span class="text-sm">Presenting data insights through intuitive visualizations.</span>
     </div>
 </div>
 

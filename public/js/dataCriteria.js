@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     $('#dataCriteria').DataTable({
         "scrollX": false,

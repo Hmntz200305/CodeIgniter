@@ -36,6 +36,7 @@ $routes->group('dataassessment', ['filter' => 'checkSession'], function ($routes
 });
 $routes->get('calculationprocess', 'CalculationProcess::index', ['filter' => 'checkSession']);
 $routes->get('decissionresult', 'DecissionResult::index', ['filter' => 'checkSession']);
+$routes->get('history', 'History::index');
 $routes->group('usersdata', ['filter' => 'checkSession'], function ($routes) {
     $routes->get('/', 'UsersData::index');
     $routes->get('addusers', 'UsersData::addusers');
