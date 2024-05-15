@@ -33,7 +33,7 @@ $(document).ready(function() {
     });
 });
 
-function showConfirmationDeleteModal(form) {
+function showConfirmationDeleteModalAssesment(form) {
     document.getElementById('modalDeleteDataAssessment').classList.remove('hidden');
     document.getElementById('modalDeleteButtonDataAssessment').addEventListener('click', function() {
         form.submit();
@@ -46,7 +46,7 @@ function showConfirmationDeleteModal(form) {
     return false;
 }
 
-function showConfirmationClearModal(form) {
+function showConfirmationClearModalAssesment(form) {
     document.getElementById('modalClearDataAssessment').classList.remove('hidden');
     document.getElementById('modalClearTableButtonDataAssessment').addEventListener('click', function() {
         form.submit();

@@ -5,11 +5,13 @@ namespace App\Controllers;
 class DataCriteria extends BaseController
 {
     protected $kriteriaModel;
+    protected $session;
     protected $helpers = ['form'];
 
     public function __construct()
     {
         $this->kriteriaModel = new \App\Models\CriteriaModel();
+        $this->session = \Config\Services::session();
     }
 
     public function index()
@@ -61,8 +63,15 @@ class DataCriteria extends BaseController
         $bobot_kriteria = $this->request->getPost('bobot_kriteria');
 
         $insert = $this->kriteriaModel->addProcess($kode_kriteria, $deskripsi_kriteria, $bobot_kriteria);
-
-        return redirect()->to('datacriteria/adddata');
+        if ($insert) {
+            $this->session->setFlashdata('message', 'Kriteria berhasil ditambahkan!');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
+        } else {
+            $this->session->setFlashdata('message', 'Kriteria tidak berhasil disimpan!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
+        }
     }
 
     public function deleteprocess($id_kriteria)
@@ -70,9 +79,13 @@ class DataCriteria extends BaseController
         $delete = $this->kriteriaModel->delete($id_kriteria);
 
         if ($delete) {
-            return redirect()->to('/datacriteria');
+            $this->session->setFlashdata('message', 'Kriteria berhasil dihapus!');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
         } else {
-            echo "Failed to delete data.";
+            $this->session->setFlashdata('message', 'Gagal menghapus data!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
         }
     }
 
@@ -140,6 +153,14 @@ class DataCriteria extends BaseController
         }
 
         $update = $this->kriteriaModel->editProcess($id_kriteria, $kode_kriteria, $deskripsi_kriteria,  $bobot_kriteria);
-        return redirect()->to('/datacriteria');
+        if ($update) {
+            $this->session->setFlashdata('message', 'Kriteria berhasil diupdate!');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
+        } else {
+            $this->session->setFlashdata('message', 'Kriteria tidak berhasil disimpan!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
+        }
     }
 }

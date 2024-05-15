@@ -1,5 +1,26 @@
 <?= view('layout/header'); ?>
 
+<?php if (session()->has('message') && session()->has('message_type')) : ?>
+    <script>
+        var message = '<?= session('message') ?>';
+        var type = '<?= session('message_type') ?>'; // Menggunakan string
+
+        switch (type) {
+            case 'warning': // Membandingkan dengan string
+                toggleWarningNotif(message);
+                break;
+            case 'error':
+                toggleFailedNotif(message);
+                break;
+            case 'success':
+                toggleSuccessNotif(message);
+                break;
+            default:
+                break;
+        }
+    </script>
+<?php endif; ?>
+
 <div class="p-4 space-y-4">
     <div class="flex justify-between items-center p-2 rounded-tl-lg rounded-bl-lg">
         <div>
@@ -56,9 +77,15 @@
                             <button onclick="showEditAlternative(<?php echo $row['id_alternatif']; ?>)" class="text-green-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
                                 <i class="ri-edit-circle-line"></i>
                             </button>
-                            <button class="dataalternatif-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $row['id_alternatif']; ?>">
+                            <!-- <button class="dataalternatif-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $row['id_alternatif']; ?>">
                                 <i class="ri-delete-bin-3-line"></i>
-                            </button>
+                            </button> -->
+                            <form action="dataalternative/deleteprocess/<?php echo $row['id_alternatif']; ?>" method="POST" id="deleteForm_<?php echo $row['id_alternatif']; ?>" onsubmit="return showConfirmationDeleteModalAlternative(this);">
+                                <button type="submit" class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
+                                    <i class="ri-delete-bin-3-line"></i>
+                                </button>
+                                <input type="hidden" name="_method" value="DELETE">
+                            </form>
                         </div>
                     </td>
                 </tr>
@@ -67,7 +94,7 @@
     </table>
 </div>
 
-<div class="modalDeleteAlternative flex fixed inset-0 p-4 flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] hidden">
+<div id="modalDeleteAlternative" class="flex fixed inset-0 p-4 flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] hidden">
     <div class="w-full max-w-md bg-white shadow-lg rounded-md p-6 relative">
         <div class="my-6 text-center">
             <div class="inline w-16 h-16 text-7xl text-rose-600">

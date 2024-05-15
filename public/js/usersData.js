@@ -33,42 +33,17 @@ $(document).ready(function() {
 });
 
 
-const modalDeleteUsers = document.querySelector('.modalDeleteUsers');
-const modalDeleteUsersOpen = document.querySelectorAll('.userdata-delete-btn');
-const modalDeleteUsersClose = document.getElementById('modalDeleteUsersClose');
-
-modalDeleteUsersOpen.forEach(button => {
-    button.addEventListener('click', () => {
-        const id_user = button.dataset.id;
-        modalDeleteUsers.classList.remove('hidden');
-
-        const deleteButton = document.getElementById('modalDeleteButtonUsers');
-        deleteButton.addEventListener('click', () => {
-            confirmDeleteUser(id_user);
-        });
+function showConfirmationDeleteModalUserData(form) {
+    document.getElementById('modalDeleteUsers').classList.remove('hidden');
+    document.getElementById('modalDeleteButtonUsers').addEventListener('click', function() {
+        form.submit();
     });
-});
 
-modalDeleteUsersClose.addEventListener('click', () => {
-    modalDeleteUsers.classList.add('hidden');
-});
-
-// FUNCTION DELETE
-function confirmDeleteUser(id) {
-    fetch("usersdata/deleteprocess/" + id, {
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (response.ok) {
-            window.location.href = "usersdata"
-        } else {
-            pass
-        }
-    })
-    .catch(error => {
-        // Kesalahan dalam melakukan permintaan, lakukan sesuatu jika perlu
-        console.error("Terjadi kesalahan:", error);
+    document.getElementById('modalDeleteUsersClose').addEventListener('click', function() {
+        // Sembunyikan modal
+        document.getElementById('modalDeleteUsers').classList.add('hidden');
     });
+    return false;
 }
 
 // FUNCTION EDIT

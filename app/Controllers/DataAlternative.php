@@ -6,11 +6,13 @@ class DataAlternative extends BaseController
 {
 
     protected $alternatifModel;
+    protected $session;
     protected $helpers = ['form'];
 
     public function __construct()
     {
         $this->alternatifModel = new \App\Models\AlternativeModel();
+        $this->session = \Config\Services::session();
     }
 
     public function index()
@@ -49,21 +51,23 @@ class DataAlternative extends BaseController
             ]
         ]);
 
-        // Jalankan validasi
         if (!$validation->run($this->request->getPost())) {
             // Jika validasi gagal, kembalikan dengan pesan kesalahan
             return redirect()->back()->withInput()->with('errors', $validation->getErrors());
         }
 
-        // Ambil data dari input form
         $kode_alternatif = $this->request->getPost('kode_alternatif');
         $nama_alternatif = $this->request->getPost('nama_alternatif');
-
-        // Panggil method untuk menambahkan data baru ke dalam model
         $insert = $this->alternatifModel->addProcess($kode_alternatif, $nama_alternatif);
-
-        // Redirect ke halaman yang sesuai setelah proses selesai
-        return redirect()->to('dataalternative/adddata');
+        if ($insert) {
+            $this->session->setFlashdata('message', 'Berhasil menambahkan alternatif!');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
+        } else {
+            $this->session->setFlashdata('message', 'Gagal menambahkan data!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
+        }
     }
 
 
@@ -72,9 +76,13 @@ class DataAlternative extends BaseController
         $delete = $this->alternatifModel->delete($id_alternatif);
 
         if ($delete) {
-            return redirect()->to('/dataalternative');
+            $this->session->setFlashdata('message', 'Alternatif berhasil dihapus!');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
         } else {
-            echo "Failed to delete data.";
+            $this->session->setFlashdata('message', 'Gagal menghapus data!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
         }
     }
 
@@ -137,6 +145,14 @@ class DataAlternative extends BaseController
         }
 
         $update = $this->alternatifModel->editProcess($id_alternatif, $kode_alternatif, $nama_alternatif);
-        return redirect()->to('/dataalternative');
+        if ($update) {
+            $this->session->setFlashdata('message', 'Alternatif berhasil diupdate!');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
+        } else {
+            $this->session->setFlashdata('message', 'Gagal menyimpan data!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
+        }
     }
 }

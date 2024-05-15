@@ -35,6 +35,8 @@ class AlternativeModel extends Model
         ];
 
         $this->insert($data);
+
+        return true;
     }
 
     public function editProcess($id_alternatif, $kode_alternatif,  $nama_alternatif)

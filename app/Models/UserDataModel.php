@@ -38,6 +38,8 @@ class UserDataModel extends Model
         ];
 
         $this->insert($data);
+
+        return true;
     }
 
     public function editProcess($id_user, $name,  $role)

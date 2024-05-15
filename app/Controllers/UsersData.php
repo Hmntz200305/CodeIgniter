@@ -5,11 +5,13 @@ namespace App\Controllers;
 class UsersData extends BaseController
 {
     protected $userDataModel;
+    protected $session;
     protected $helpers = ['form'];
 
     public function __construct()
     {
         $this->userDataModel = new \App\Models\UserDataModel();
+        $this->session = \Config\Services::session();
     }
 
     public function index()
@@ -93,8 +95,15 @@ class UsersData extends BaseController
 
         $md5password = md5($password);
         $insert = $this->userDataModel->addProcess($role, $nama, $email, $username, $md5password);
-
-        return redirect()->to('usersdata/addusers');
+        if ($insert) {
+            $this->session->setFlashdata('message', 'DataUser berhasil ditambahkan!');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
+        } else {
+            $this->session->setFlashdata('message', 'Gagal menyimpan data!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
+        }
     }
 
     public function deleteprocess($id_user)
@@ -102,9 +111,13 @@ class UsersData extends BaseController
         $delete = $this->userDataModel->delete($id_user);
 
         if ($delete) {
-            return redirect()->to('/usersdata');
+            $this->session->setFlashdata('message', 'DataUser berhasil dihapus!');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
         } else {
-            echo "Failed to delete data.";
+            $this->session->setFlashdata('message', 'Gagal menyimpan data!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
         }
     }
 
@@ -147,6 +160,14 @@ class UsersData extends BaseController
         $role = intval($this->request->getPost('role'));
 
         $update = $this->userDataModel->editProcess($id_user, $name, $role);
-        return redirect()->to('/usersdata');
+        if ($update) {
+            $this->session->setFlashdata('message', 'DataUser berhasil diupdate');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
+        } else {
+            $this->session->setFlashdata('message', 'Gagal menyimpan data!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
+        }
     }
 }

@@ -33,46 +33,18 @@ $(document).ready(function() {
     });
 });
 
-// MODAL
-const modalDeleteCriteria = document.querySelector('.modalDeleteCriteria');
-const modalDeleteCriteriaOpen = document.querySelectorAll('.datacriteria-delete-btn');
-const modalDeleteCriteriaClose = document.getElementById('modalDeleteCriteriaClose');
-
-modalDeleteCriteriaOpen.forEach(button => {
-    button.addEventListener('click', () => {
-        const id_criteria = button.dataset.id;
-        modalDeleteCriteria.classList.remove('hidden');
-
-        const deleteButton = document.getElementById('modalDeleteButtonCriteria');
-        deleteButton.addEventListener('click', () => {
-            confirmDeleteCriteria(id_criteria);
-        });
+function showConfirmationDeleteModalCriteria(form) {
+    document.getElementById('modalDeleteCriteria').classList.remove('hidden');
+    document.getElementById('modalDeleteButtonCriteria').addEventListener('click', function() {
+        form.submit();
     });
-});
 
-modalDeleteCriteriaClose.addEventListener('click', () => {
-    modalDeleteCriteria.classList.add('hidden');
-});
-
-// FUNCTION DELETE
-function confirmDeleteCriteria(id) {
-    fetch("datacriteria/deleteprocess/" + id, {
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (response.ok) {
-            window.location.href = "datacriteria";
-        } else {
-            // Gagal menghapus, lakukan sesuatu jika perlu
-            console.error("Gagal menghapus data");
-        }
-    })
-    .catch(error => {
-        // Kesalahan dalam melakukan permintaan, lakukan sesuatu jika perlu
-        console.error("Terjadi kesalahan:", error);
+    document.getElementById('modalDeleteCriteriaClose').addEventListener('click', function() {
+        // Sembunyikan modal
+        document.getElementById('modalDeleteCriteria').classList.add('hidden');
     });
+    return false;
 }
-
 
 // FUNCTION EDIT
 function showEditCriteria(id) {

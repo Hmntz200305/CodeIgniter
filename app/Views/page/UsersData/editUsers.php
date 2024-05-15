@@ -1,5 +1,26 @@
 <?= view('layout/header'); ?>
 
+<?php if (session()->has('message') && session()->has('message_type')) : ?>
+    <script>
+        var message = '<?= session('message') ?>';
+        var type = '<?= session('message_type') ?>'; // Menggunakan string
+
+        switch (type) {
+            case 'warning': // Membandingkan dengan string
+                toggleWarningNotif(message);
+                break;
+            case 'error':
+                toggleFailedNotif(message);
+                break;
+            case 'success':
+                toggleSuccessNotif(message);
+                break;
+            default:
+                break;
+        }
+    </script>
+<?php endif; ?>
+
 <div class="p-4 space-y-4">
     <div class="flex justify-between items-center p-2 rounded-tl-lg rounded-bl-lg">
         <div>

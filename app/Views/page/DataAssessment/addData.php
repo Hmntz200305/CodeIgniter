@@ -21,10 +21,6 @@
     </script>
 <?php endif; ?>
 
-
-
-
-
 <div class="p-4 space-y-4">
     <div class="flex justify-between items-center p-2 rounded-tl-lg rounded-bl-lg">
         <div>

@@ -34,46 +34,18 @@ $(document).ready(function() {
 });
 
 
-// MODAL DELETE
-const modalDeleteAlternative = document.querySelector('.modalDeleteAlternative');
-const modalDeleteAlternativeOpen = document.querySelectorAll('.dataalternatif-delete-btn');
-const modalDeleteAlternativeClose = document.getElementById('modalDeleteAlternativeClose');
 
-modalDeleteAlternativeOpen.forEach(button => {
-    button.addEventListener('click', () => {
-        const id_alternative = button.dataset.id;
-        modalDeleteAlternative.classList.remove('hidden');
-
-        const deleteButton = document.getElementById('modalDeleteButtonAlternative');
-        deleteButton.addEventListener('click', () => {
-            confirmDeleteAlternative(id_alternative);
-        });
+function showConfirmationDeleteModalAlternative(form) {
+    document.getElementById('modalDeleteAlternative').classList.remove('hidden');
+    document.getElementById('modalDeleteButtonAlternative').addEventListener('click', function() {
+        form.submit();
     });
-});
 
-modalDeleteAlternativeClose.addEventListener('click', () => {
-    modalDeleteAlternative.classList.add('hidden');
-});
-
-
-
-
-// FUNCTION DELETE
-function confirmDeleteAlternative(id) {
-    fetch("dataalternative/deleteprocess/" + id, {
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (response.ok) {
-            window.location.href = "dataalternative"
-        } else {
-            pass
-        }
-    })
-    .catch(error => {
-        // Kesalahan dalam melakukan permintaan, lakukan sesuatu jika perlu
-        console.error("Terjadi kesalahan:", error);
+    document.getElementById('modalDeleteAlternativeClose').addEventListener('click', function() {
+        // Sembunyikan modal
+        document.getElementById('modalDeleteAlternative').classList.add('hidden');
     });
+    return false;
 }
 
 // FUNCTION EDIT

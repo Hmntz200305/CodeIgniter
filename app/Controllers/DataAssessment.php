@@ -124,12 +124,12 @@ class DataAssessment extends BaseController
         $delete = $this->penialianModel->delete($id_penilaian);
 
         if ($delete) {
-            session()->setFlashdata('message', 'Penilaian Alternatif berhasil dihapus');
-            session()->setFlashdata('message_type', 'success');
+            $this->session->setFlashdata('message', 'Penilaian Alternatif berhasil dihapus');
+            $this->session->setFlashdata('message_type', 'success');
             return redirect()->back();
         } else {
-            session()->setFlashdata('message', 'Gagal menghapus data');
-            session()->setFlashdata('message_type', 'error');
+            $this->session->setFlashdata('message', 'Gagal menghapus data');
+            $this->session->setFlashdata('message_type', 'error');
             return redirect()->back();
         }
     }
@@ -139,12 +139,12 @@ class DataAssessment extends BaseController
         $truncate = $this->penialianModel->truncateTable('penilaian');
 
         if ($truncate) {
-            session()->setFlashdata('message', 'Table berhasil dibersihkan');
-            session()->setFlashdata('message_type', 'success');
+            $this->session->setFlashdata('message', 'Table berhasil dibersihkan');
+            $this->session->setFlashdata('message_type', 'success');
             return redirect()->back();
         } else {
-            session()->setFlashdata('message', 'Gagal membersihkan table');
-            session()->setFlashdata('message_type', 'error');
+            $this->session->setFlashdata('message', 'Gagal membersihkan table');
+            $this->session->setFlashdata('message_type', 'error');
             return redirect()->back();
         }
     }
@@ -183,6 +183,10 @@ class DataAssessment extends BaseController
 
         $nilai = $this->request->getPost('nilai_penilaian');
         $update = $this->penialianModel->editProcess($id_penilaian, $nilai);
-        return redirect()->to('/dataassessment');
+        if ($update) {
+            $this->session->setFlashdata('message', 'Penilaian berhasil di update');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
+        }
     }
 }

@@ -59,7 +59,7 @@
                 <span>Add Data</span>
             </button>
         </a>
-        <form action="dataassessment/clearprocess" method="POST" onsubmit="return showConfirmationClearModal(this);">
+        <form action="dataassessment/clearprocess" method="POST" onsubmit="return showConfirmationClearModalAssesment(this);">
             <button type="submit" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
                 <i class="ri-eraser-line"></i>
                 <span>Clear Table</span>
@@ -94,7 +94,7 @@
                             <!-- <button class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $data['id_penilaian']; ?>">
                                 <i class="ri-delete-bin-3-line"></i>
                             </button> -->
-                            <form action="dataassessment/deleteprocess/<?php echo $data['id_penilaian']; ?>" method="POST" id="deleteForm_<?php echo $data['id_penilaian']; ?>" onsubmit="return showConfirmationDeleteModal(this);">
+                            <form action="dataassessment/deleteprocess/<?php echo $data['id_penilaian']; ?>" method="POST" id="deleteForm_<?php echo $data['id_penilaian']; ?>" onsubmit="return showConfirmationDeleteModalAssesment(this);">
                                 <button type="submit" class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
                                     <i class="ri-delete-bin-3-line"></i>
                                 </button>

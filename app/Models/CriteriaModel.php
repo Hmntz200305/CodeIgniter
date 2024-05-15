@@ -35,6 +35,8 @@ class CriteriaModel extends Model
         ];
 
         $this->insert($data);
+
+        return true;
     }
 
     public function editProcess($id_kriteria, $kode_kriteria, $deskripsi_kriteria,  $bobot_kriteria)
@@ -42,5 +44,7 @@ class CriteriaModel extends Model
         $update = $this->where('id_kriteria', $id_kriteria)
             ->set(['kode_kriteria' => $kode_kriteria, 'deskripsi_kriteria' => $deskripsi_kriteria, 'bobot_kriteria' => $bobot_kriteria])
             ->update();
+
+        return true;
     }
 }
