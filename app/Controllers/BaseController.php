@@ -62,9 +62,4 @@ abstract class BaseController extends Controller
     {
         $this->session = session();
     }
-
-    protected function getName()
-    {
-        return $this->session->get('name');
-    }
 }

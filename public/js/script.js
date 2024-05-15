@@ -30,33 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-const toggleNotification = () => {
-    const $notification = $('#notification');
-    if ($notification.hasClass('hidden')) {
-        $notification.removeClass('hidden');
-        $notification.removeClass('slide-out');
-        $notification.addClass('slide-in');
 
-        setTimeout(() => {
-            $notification.removeClass('slide-in');
-            $notification.addClass('slide-out');
-            setTimeout(() => {
-                $notification.addClass('hidden');
-            }, 500);
-        }, 3000);
-    } else {
-        $notification.removeClass('slide-in');
-        $notification.addClass('slide-out');
-        setTimeout(() => {
-            $notification.addClass('hidden');
-        }, 500);
-    }
-}
-
-const toggleSuccessNotif = () => {
+const toggleSuccessNotif = (message) => {
     const $successNotif = $('#successNotif');
     if ($successNotif.hasClass('hidden')) {
         $successNotif.removeClass('hidden');
+        document.getElementById("successMessage").textContent = message;
         $successNotif.removeClass('slide-out');
         $successNotif.addClass('slide-in');
 
@@ -76,10 +55,11 @@ const toggleSuccessNotif = () => {
     }
 }
 
-const toggleFailedNotif = () => {
+const toggleFailedNotif = (message) => {
     const $failedNotif = $('#failedNotif');
     if ($failedNotif.hasClass('hidden')) {
         $failedNotif.removeClass('hidden');
+        document.getElementById("errorMessage").textContent = message;
         $failedNotif.removeClass('slide-out');
         $failedNotif.addClass('slide-in');
 
@@ -99,10 +79,11 @@ const toggleFailedNotif = () => {
     }
 }
 
-const toggleWarningNotif = () => {
+const toggleWarningNotif = (message) => {
     const $warningNotif = $('#warningNotif');
     if ($warningNotif.hasClass('hidden')) {
         $warningNotif.removeClass('hidden');
+        document.getElementById("warningMessage").textContent = message;
         $warningNotif.removeClass('slide-out');
         $warningNotif.addClass('slide-in');
 

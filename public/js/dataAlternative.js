@@ -56,6 +56,8 @@ modalDeleteAlternativeClose.addEventListener('click', () => {
 });
 
 
+
+
 // FUNCTION DELETE
 function confirmDeleteAlternative(id) {
     fetch("dataalternative/deleteprocess/" + id, {

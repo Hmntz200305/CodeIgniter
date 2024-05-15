@@ -61,7 +61,7 @@ function confirmDeletePenilaian(id) {
     })
     .then(response => {
         if (response.ok) {
-            window.location.href = "dataassessment"
+            pass
         } else {
             pass
         }

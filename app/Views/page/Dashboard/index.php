@@ -13,9 +13,6 @@
                 </li>
             </ul>
         </div>
-        <!-- <div class="inline-flex items-center">
-            <span class="font-semibold text-sm text-rose-600"><?= $username ?></span>
-        </div> -->
         <?= view('layout/profile'); ?>
     </div>
 </div>

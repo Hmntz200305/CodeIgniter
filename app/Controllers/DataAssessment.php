@@ -2,18 +2,23 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\API\ResponseTrait;
+
 class DataAssessment extends BaseController
 {
     protected $alternatifModel;
     protected $kriteriaModel;
     protected $penialianModel;
+    protected $session;
     protected $helpers = ['form'];
+    use ResponseTrait;
 
     public function __construct()
     {
         $this->alternatifModel = new \App\Models\AlternativeModel();
         $this->kriteriaModel = new \App\Models\CriteriaModel();
         $this->penialianModel = new \App\Models\AssessmentModel();
+        $this->session = \Config\Services::session();
     }
 
     public function index()
@@ -47,7 +52,9 @@ class DataAssessment extends BaseController
 
         $data = [
             'alternatif' => $alternatif,
-            'kriteria' => $kriteria
+            'kriteria' => $kriteria,
+            'message' => $this->session->getFlashdata('message'),
+            'message_type' => $this->session->getFlashdata('message_type')
         ];
 
         return view('page/DataAssessment/addData', $data);
@@ -69,26 +76,49 @@ class DataAssessment extends BaseController
                     'required' => 'Alternatif harus diisi',
                 ]
             ],
-            'kriteria_penilaian.*' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Kriteria harus diisi',
-                ]
-            ],
         ]);
+
+        $checkbox = $this->request->getPost('checkbox');
+        if (!$checkbox) {
+            $this->session->setFlashdata('message', 'Harap pilih minimal satu kriteria.');
+            $this->session->setFlashdata('message_type', 'warning');
+            return redirect()->back();
+        }
+
+        $kriteria_penilaian = $this->request->getPost('kriteria_penilaian');
+        if ($kriteria_penilaian) {
+            foreach ($kriteria_penilaian as $id_kriteria => $nilai_kriteria) {
+                if (isset($checkbox[$id_kriteria]) && $checkbox[$id_kriteria] == 'on') {
+                    if (empty($nilai_kriteria) or $nilai_kriteria < 1) {
+                        $this->session->setFlashdata('message', 'Nilai kriteria harus diisi dan lebih besar dari 0.');
+                        $this->session->setFlashdata('message_type', 'warning');
+                        return redirect()->back();
+                    }
+                }
+            }
+        }
 
         if (!$validation->run($this->request->getPost())) {
             return redirect()->back()->withInput()->with('errors', $validation->getErrors());
         }
 
         $data = $_POST;
-        $duplicate = $this->penialianModel->checkDuplicate($data['periode_penilaian'], $data['alternatif_penilaian'], $data['kriteria_penilaian']);
+        $duplicate = $this->penialianModel->checkDuplicate($data['periode_penilaian'], $data['alternatif_penilaian'], $checkbox, $data['kriteria_penilaian']);
         if ($duplicate) {
-            return redirect()->back()->withInput()->with('error', 'Duplikat data ditemukan.');
-        }
+            $duplicateperiode = $duplicate['periode'];
+            $duplicateKriteria = $this->kriteriaModel->getKriteria($duplicate['kriteria']);
+            $duplicatekriterianame = $duplicateKriteria['deskripsi_kriteria'];
+            $errorMessage = "Kriteria pada Periode $duplicateperiode dan Alternatif $duplicatekriterianame sudah ditentukan";
 
-        $insert = $this->penialianModel->addProcess($data);
-        return redirect()->to('dataassessment/adddata');
+            $this->session->setFlashdata('message', $errorMessage);
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
+        } else {
+            $insert = $this->penialianModel->addProcess($data);
+            $this->session->setFlashdata('message', 'Data berhasil disimpan!');
+            $this->session->setFlashdata('message_type', 'success');
+            return redirect()->back();
+        }
     }
 
     public function deleteprocess($id_penilaian)
@@ -96,11 +126,19 @@ class DataAssessment extends BaseController
         $delete = $this->penialianModel->delete($id_penilaian);
 
         if ($delete) {
-            return redirect()->to('/dataassessment');
+            $response = array('ShowAlert' => 1, 'msg' => 'Penilaian Alternatif berhasil dihapus');
+            $this->session->setFlashdata('message', 'Berhasil menghapus penilaian!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
         } else {
-            echo "Failed to delete data.";
+            $response = array('ShowAlert' => 2, 'msg' => 'Gagal menghapus data');
+            $this->session->setFlashdata('message', 'Gagal menyimpan data!');
+            $this->session->setFlashdata('message_type', 'error');
+            return redirect()->back();
         }
     }
+
+
 
     public function clearprocess()
     {

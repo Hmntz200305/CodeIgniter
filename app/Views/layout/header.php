@@ -18,47 +18,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/v/ju/jq-3.7.0/jszip-3.10.1/dt-2.0.7/af-2.7.0/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/rr-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/sl-2.0.1/sr-1.4.1/datatables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="<?= base_url('js/script.js'); ?>"></script>
 </head>
 
 <body class="bg-gray-300 overflow-hidden ">
-    <!-- Notification -->
-    <div id="notification" class="hidden fixed top-4 right-4 space-y-2 z-50">
-        <div class="flex items-center space-x-4 max-w-sm md:max-w-md lg:max-w-lg bg-white shadow-lg border border-gray-200 p-4 rounded-lg">
-            <div class="flex-shrink-0">
-                <i class="ri-check-line text-green-500 text-2xl"></i>
-            </div>
-            <div>
-                <p class="font-medium text-gray-600">Success !</p>
-                <p class="text-sm text-gray-400">Data has been successfully added.</p>
-            </div>
-        </div>
-        <div class="flex items-center space-x-4 max-w-sm md:max-w-md lg:max-w-lg bg-white shadow-lg border border-gray-200 p-4 rounded-lg">
-            <div class="flex-shrink-0">
-                <i class="ri-close-line text-red-500 text-2xl"></i>
-            </div>
-            <div>
-                <p class="font-medium text-gray-600">Error !</p>
-                <p class="text-sm text-gray-400">Data has been failed to added.</p>
-            </div>
-        </div>
-        <div class="flex items-center space-x-4 max-w-sm md:max-w-md lg:max-w-lg bg-white shadow-lg border border-gray-200 p-4 rounded-lg">
-            <div class="flex-shrink-0">
-                <i class="ri-error-warning-line text-orange-500 text-2xl"></i>
-            </div>
-            <div>
-                <p class="font-medium text-gray-600">Warning !</p>
-                <p class="text-sm text-gray-400">Tidak tau</p>
-            </div>
-        </div>
-    </div>
-
     <div id="successNotif" class="z-50 hidden fixed top-4 right-4 bg-white shadow-lg border border-gray-200 p-4 rounded-lg flex items-center space-x-4 max-w-sm md:max-w-md lg:max-w-lg">
         <div class="flex-shrink-0">
             <i class="ri-check-line text-green-500 text-2xl"></i>
         </div>
         <div>
             <p class="font-medium text-gray-600">Success !</p>
-            <p class="text-sm text-gray-400">Data has been successfully added.</p>
+            <p id="successMessage" class="text-sm text-gray-400"></p>
         </div>
     </div>
 
@@ -68,7 +38,7 @@
         </div>
         <div>
             <p class="font-medium text-gray-600">Error !</p>
-            <p class="text-sm text-gray-400">Data has been failed to added.</p>
+            <p id="errorMessage" class="text-sm text-gray-400"></p>
         </div>
     </div>
 
@@ -78,7 +48,7 @@
         </div>
         <div>
             <p class="font-medium text-gray-600">Warning !</p>
-            <p class="text-sm text-gray-400">Tidak tau</p>
+            <p id="warningMessage" class="text-sm text-gray-400"></p>
         </div>
     </div>
 
@@ -174,7 +144,7 @@
                         <button onclick="toggleWarningNotif()" class="sidebarCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
                             <span>warning</span>
                         </button>
-                        
+
                     </nav>
                 </div>
             </div>

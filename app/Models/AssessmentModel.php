@@ -18,24 +18,30 @@ class AssessmentModel extends Model
         return $get;
     }
 
-    public function checkDuplicate($periode_penilaian, $id_alternatif, $kriteria_penilaian)
+    public function checkDuplicate($periode_penilaian, $id_alternatif, $checkbox, $kriteria_penilaian)
     {
-        // Iterate over each element in the $kriteria_penilaian array
         foreach ($kriteria_penilaian as $id_kriteria => $nilai_kriteria) {
-            // Retrieve the count of rows where the combination exists
-            $query = $this->where('periode_penilaian', $periode_penilaian)
-                ->where('id_alternatif', $id_alternatif)
-                ->where('id_kriteria', $id_kriteria)
-                ->countAllResults();
-            // If a duplicate is found, return true immediately
-            if ($query > 0) {
-                return true;
+            if (isset($checkbox[$id_kriteria]) && $checkbox[$id_kriteria] == 'on') {
+                $query = $this->where('periode_penilaian', $periode_penilaian)
+                    ->where('id_alternatif', $id_alternatif)
+                    ->where('id_kriteria', $id_kriteria)
+                    ->countAllResults();
+
+                if ($query > 0) {
+                    // Duplikasi ditemukan, simpan data terkait dengan duplikasi dalam array
+                    $data = [
+                        'periode' => $periode_penilaian,
+                        'kriteria' => $id_kriteria
+                    ];
+                    return $data;
+                }
             }
         }
 
-        // If no duplicate is found, return false
-        return false;
+        return false; // Tidak ada duplikasi
     }
+
+
 
 
 
@@ -44,15 +50,18 @@ class AssessmentModel extends Model
         $data = $data_penilaian;
         $periode_penilaian = $data['periode_penilaian'];
         $id_alternatif = $data['alternatif_penilaian'];
+        $checkbox = $data['checkbox'];
         $kriteria_penilaian = $data['kriteria_penilaian'];
         foreach ($kriteria_penilaian as $id_kriteria => $nilai) {
-            $data_insert = [
-                'periode_penilaian' => $periode_penilaian,
-                'id_alternatif' => $id_alternatif,
-                'id_kriteria' => $id_kriteria,
-                'nilai' => $nilai
-            ];
-            $this->insert($data_insert);
+            if (isset($checkbox[$id_kriteria]) && $checkbox[$id_kriteria] == 'on') {
+                $data_insert = [
+                    'periode_penilaian' => $periode_penilaian,
+                    'id_alternatif' => $id_alternatif,
+                    'id_kriteria' => $id_kriteria,
+                    'nilai' => $nilai
+                ];
+                $this->insert($data_insert);
+            }
         }
     }
 
