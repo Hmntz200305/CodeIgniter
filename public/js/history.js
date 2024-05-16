@@ -99,3 +99,38 @@ $(document).ready(function() {
         ],
     });
 });
+
+
+// MODAL CLEAR
+const modalClearHistoryDelete = document.querySelector('.modalClearHistoryDelete');
+const modalClearHistoryDeleteOpen = document.getElementById('modalClearHistoryDeleteOpen');
+const modalClearHistoryDeleteClose = document.getElementById('modalClearHistoryDeleteClose');
+
+modalClearHistoryDeleteOpen.addEventListener('click', () => {
+    modalClearHistoryDelete.classList.toggle('hidden');
+});
+modalClearHistoryDeleteClose.addEventListener('click', () => {
+    modalClearHistoryDelete.classList.add('hidden');
+});
+
+const modalClearHistoryEdit = document.querySelector('.modalClearHistoryEdit');
+const modalClearHistoryEditOpen = document.getElementById('modalClearHistoryEditOpen');
+const modalClearHistoryEditClose = document.getElementById('modalClearHistoryEditClose');
+
+modalClearHistoryEditOpen.addEventListener('click', () => {
+    modalClearHistoryEdit.classList.toggle('hidden');
+});
+modalClearHistoryEditClose.addEventListener('click', () => {
+    modalClearHistoryEdit.classList.add('hidden');
+});
+
+const modalClearHistoryInsert = document.querySelector('.modalClearHistoryInsert');
+const modalClearHistoryInsertOpen = document.getElementById('modalClearHistoryInsertOpen');
+const modalClearHistoryInsertClose = document.getElementById('modalClearHistoryInsertClose');
+
+modalClearHistoryInsertOpen.addEventListener('click', () => {
+    modalClearHistoryInsert.classList.toggle('hidden');
+});
+modalClearHistoryInsertClose.addEventListener('click', () => {
+    modalClearHistoryInsert.classList.add('hidden');
+});

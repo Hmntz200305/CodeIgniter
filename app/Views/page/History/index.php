@@ -64,12 +64,13 @@
                 </li>
             </ul>
             <div data-tab-content="" class="mt-2">
+                <!-- DELETE -->
                 <div class="block opacity-100" id="app" role="tabpanel">
                     <div class="py-2">
                         <span class="text-sm">Tracking records of all deleted data entries for accountability and audit purposes.</span>
                     </div>
                     <div class="flex space-x-4">
-                        <button id="modalClearOpen" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
+                        <button id="modalClearHistoryDeleteOpen" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
                             <i class="ri-eraser-line"></i>
                             <span>Clear Table</span>
                         </button>
@@ -93,12 +94,13 @@
                         </tbody>
                     </table>
                 </div>
+                <!-- EDIT -->
                 <div class="hidden opacity-0" id="message" role="tabpanel">
                     <div class="py-2">
                         <span class="text-sm">Logging modifications to data entries, ensuring transparency and traceability.</span>
                     </div>
                     <div class="flex space-x-4">
-                        <button id="modalClearOpen" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
+                        <button id="modalClearHistoryEditOpen" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
                             <i class="ri-eraser-line"></i>
                             <span>Clear Table</span>
                         </button>
@@ -122,12 +124,13 @@
                         </tbody>
                     </table>
                 </div>
+                <!-- INSERT -->
                 <div class="hidden opacity-0" id="settings" role="tabpanel">
                     <div class="py-2">
                         <span class="text-sm">Documenting all newly added data entries to maintain comprehensive data history.</span>
                     </div>   
                     <div class="flex space-x-4">
-                        <button id="modalClearOpen" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
+                        <button id="modalClearHistoryInsertOpen" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
                             <i class="ri-eraser-line"></i>
                             <span>Clear Table</span>
                         </button>
@@ -151,6 +154,88 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CLEAR -->
+    <div class="modalClearHistoryDelete flex fixed inset-0 p-4 flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] hidden">
+        <div class="w-full max-w-md bg-white shadow-lg rounded-md p-6 relative">
+            <div class="my-6 text-center">
+                <div class="inline w-16 h-16 text-7xl text-rose-600">
+                    <i class="ri-eraser-line"></i>
+                </div>
+                <h4 class="text-xl font-semibold mt-6">Delete Table?</h4>
+                <p class="text-sm text-gray-500 mt-4">You're going to clear this table. Are you sure?</p>
+            </div>
+            <div class="flex justify-center space-x-4">
+                <button 
+                    id="modalClearHistoryDeleteClose"
+                    type="button"
+                    class="text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded"
+                >
+                    Cancel
+                </button>
+                <button 
+                    type="button"
+                    class="rounded-md bg-rose-600 px-4 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-700"
+                >
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modalClearHistoryEdit flex fixed inset-0 p-4 flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] hidden">
+        <div class="w-full max-w-md bg-white shadow-lg rounded-md p-6 relative">
+            <div class="my-6 text-center">
+                <div class="inline w-16 h-16 text-7xl text-rose-600">
+                    <i class="ri-eraser-line"></i>
+                </div>
+                <h4 class="text-xl font-semibold mt-6">Delete Table?</h4>
+                <p class="text-sm text-gray-500 mt-4">You're going to clear this table. Are you sure?</p>
+            </div>
+            <div class="flex justify-center space-x-4">
+                <button 
+                    id="modalClearHistoryEditClose"
+                    type="button"
+                    class="text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded"
+                >
+                    Cancel
+                </button>
+                <button 
+                    type="button"
+                    class="rounded-md bg-rose-600 px-4 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-700"
+                >
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modalClearHistoryInsert flex fixed inset-0 p-4 flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] hidden">
+        <div class="w-full max-w-md bg-white shadow-lg rounded-md p-6 relative">
+            <div class="my-6 text-center">
+                <div class="inline w-16 h-16 text-7xl text-rose-600">
+                    <i class="ri-eraser-line"></i>
+                </div>
+                <h4 class="text-xl font-semibold mt-6">Delete Table?</h4>
+                <p class="text-sm text-gray-500 mt-4">You're going to clear this table. Are you sure?</p>
+            </div>
+            <div class="flex justify-center space-x-4">
+                <button 
+                    id="modalClearHistoryInsertClose"
+                    type="button"
+                    class="text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded"
+                >
+                    Cancel
+                </button>
+                <button 
+                    type="button"
+                    class="rounded-md bg-rose-600 px-4 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-700"
+                >
+                    Delete
+                </button>
             </div>
         </div>
     </div>
