@@ -1,7 +1,7 @@
 <?= view('layout/header'); ?>
 
-    <div class="p-4 space-y-4">
-        <div class="flex justify-between items-center p-2 rounded-tl-lg rounded-bl-lg">
+    <div class="p-6">
+        <div class="flex justify-between items-center rounded-tl-lg rounded-bl-lg">
             <div>
                 <ul class="space-x-1 flex items-center whitespace-nowrap font-medium text-sm text-gray-500">
                     <li class="inline-flex items-center space-x-1">
@@ -22,14 +22,10 @@
         </div>
     </div>
 
-    <div class="px-4">
-        <div class="p-2 flex flex-col">
+    <div class="px-6">
+        <div class="py-2">
             <span class="text-lg font-bold">History</span>
-            <span class="text-sm">Tracking and reviewing past activities, changes, and decisions made within the system for reference and analysis.</span>
         </div>
-    </div>
-
-    <div class="px-4">
         <div class="relative right-0">
             <ul class="relative flex flex-wrap p-1 list-none rounded-xl bg-blue-gray-50/60" data-tabs="tabs" role="list">
                 <li class="z-30 flex-auto text-center">
@@ -69,6 +65,9 @@
             </ul>
             <div data-tab-content="" class="mt-2">
                 <div class="block opacity-100" id="app" role="tabpanel">
+                    <div class="py-2">
+                        <span class="text-sm">Tracking records of all deleted data entries for accountability and audit purposes.</span>
+                    </div>
                     <div class="flex space-x-4">
                         <button id="modalClearOpen" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
                             <i class="ri-eraser-line"></i>
@@ -95,6 +94,9 @@
                     </table>
                 </div>
                 <div class="hidden opacity-0" id="message" role="tabpanel">
+                    <div class="py-2">
+                        <span class="text-sm">Logging modifications to data entries, ensuring transparency and traceability.</span>
+                    </div>
                     <div class="flex space-x-4">
                         <button id="modalClearOpen" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
                             <i class="ri-eraser-line"></i>
@@ -121,6 +123,9 @@
                     </table>
                 </div>
                 <div class="hidden opacity-0" id="settings" role="tabpanel">
+                    <div class="py-2">
+                        <span class="text-sm">Documenting all newly added data entries to maintain comprehensive data history.</span>
+                    </div>   
                     <div class="flex space-x-4">
                         <button id="modalClearOpen" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
                             <i class="ri-eraser-line"></i>

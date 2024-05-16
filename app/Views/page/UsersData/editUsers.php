@@ -21,8 +21,8 @@
     </script>
 <?php endif; ?>
 
-<div class="p-4 space-y-4">
-    <div class="flex justify-between items-center p-2 rounded-tl-lg rounded-bl-lg">
+<div class="p-6">
+    <div class="flex justify-between items-center rounded-tl-lg rounded-bl-lg">
         <div>
             <ul class="space-x-1 flex items-center whitespace-nowrap font-medium text-sm text-gray-500">
                 <li class="inline-flex items-center space-x-1">
@@ -49,14 +49,11 @@
     </div>
 </div>
 
-<div class="px-4">
-    <div class="p-2 flex flex-col">
+<div class="px-6">
+    <div class="py-4 flex flex-col">
         <span class="text-lg font-bold">Edit Users</span>
         <span class="text-sm">Modifying user profiles and permissions within the system to ensure accurate and up-to-date information.</span>
     </div>
-</div>
-
-<div class="p-4">
     <div class="mt-10 mx-auto lg:w-1/2 sm:w-full">
         <form class="space-y-6" method="post" action="<?php echo site_url('usersdata/editUsers/edituserprocess/' . $id); ?>">
             <div>
@@ -121,5 +118,6 @@
         </form>
     </div>
 </div>
+
 
 <?= view('layout/footer'); ?>

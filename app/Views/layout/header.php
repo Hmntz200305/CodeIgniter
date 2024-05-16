@@ -69,87 +69,170 @@
                 <span class="sidebarCenter flex ml-[18px] mt-10 mb-2 text-xxs font-semibold text-[#757575] uppercase">Main</span>
                 <div class="flex mt-3 flex-1 flex-col">
                     <nav>
-                        <a href="<?= route_to('/'); ?>" title="" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <i class="ri-dashboard-horizontal-line align-middle text-xl"></i>
-                            <span class="sidebarHidden ml-4">Dashboard</span>
-                        </a>
-                        <div class="relative transition">
+                        <div>
+                            <button class="w-full" id="popoverToggleDashboard">
+                                <a href="<?= route_to('/'); ?>" title="" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+                                    <i class="ri-dashboard-horizontal-line align-middle text-xl"></i>
+                                    <span class="sidebarHidden ml-4">Dashboard</span>
+                                </a>
+                            </button>
+                            <span 
+                                id="popoverContentDashboard" 
+                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
+                            >
+                                Dashboard
+                            </span>
+                        </div>
+                        <div class="transition">
                             <input class="peer hidden" placeholder="." type="checkbox" id="menu-1" />
-                            <button class="iconCenter flex peer relative w-full items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:text-rose-600 focus:border-l-4">
-                                <i class="ri-line-chart-line align-middle text-xl"></i>
+                            <button class="iconCenter flex peer relative w-full items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:text-rose-600">
+                                <i class="ri-dropdown-list align-middle text-xl"></i>
                                 <span class="sidebarHidden ml-4">Data</span>
                                 <label for="menu-1" class="absolute inset-0 h-full w-full cursor-pointer"></label>
                             </button>
-                            <i class="sidebarHidden ri-arrow-up-s-line absolute right-0 top-2.5 ml-auto mr-5 text-gray-600 transition peer-checked:rotate-180 peer-hover:text-rose-600"></i>
-                            <ul class="duration-400 flex max-h-0 flex-col mx-2 overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 peer-checked:max-h-96">
-                                <a href="<?= route_to('dataalternative'); ?>" class="iconCenter flex items-center mx-2 cursor-pointer border-l-rose-600 py-2 pl-5 text-sm text-gray-600 transition-all duration-100 ease-in-out hover:border-l-4 hover:text-rose-600">
-                                    <span class="mr-5">
-                                        <i class="ri-checkbox-blank-circle-line text-xl"></i>
+                            <ul class="sidebarUl duration-400 flex max-h-0 flex-col mx-2 overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 peer-checked:max-h-96">
+                                <div>
+                                    <button class="w-full" id="popoverToggleAlternative">
+                                        <a href="<?= route_to('dataalternative'); ?>" class="iconCenter flex items-center mx-2 cursor-pointer py-2 pl-5 text-sm text-gray-600 transition-all duration-100 ease-in-out  hover:text-rose-600">
+                                            <span class="mr-5">
+                                                <i class="ri-checkbox-blank-circle-line text-xl"></i>
+                                            </span>
+                                            <span class="sidebarHidden">Alternative</span>
+                                        </a>
+                                    </button>
+                                    <span 
+                                        id="popoverContentAlternative" 
+                                        class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
+                                    >
+                                        Data Alternative
                                     </span>
-                                    <span class="sidebarHidden">Alternative</span>
-                                </a>
-                                <a href="<?= route_to('datacriteria'); ?>" class="iconCenter flex items-center mx-2 cursor-pointer border-l-rose-600 py-2 pl-5 text-sm text-gray-600 transition-all duration-100 ease-in-out hover:border-l-4 hover:text-rose-600">
-                                    <span class="mr-5">
-                                        <i class="ri-checkbox-blank-circle-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <button class="w-full" id='popoverToggleCriteria'>
+                                        <a href="<?= route_to('datacriteria'); ?>" class="iconCenter flex items-center mx-2 cursor-pointer py-2 pl-5 text-sm text-gray-600 transition-all duration-100 ease-in-out hover:text-rose-600">
+                                            <span class="mr-5">
+                                                <i class="ri-checkbox-blank-circle-line text-xl"></i>
+                                            </span>
+                                            <span class="sidebarHidden">Criteria</span>
+                                        </a>
+                                    </button>
+                                    <span 
+                                        id="popoverContentCriteria" 
+                                        class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
+                                    >
+                                        Data Criteria
                                     </span>
-                                    <span class="sidebarHidden">Criteria</span>
-                                </a>
-                                <a href="<?= route_to('dataassessment'); ?>" class="iconCenter flex items-center mx-2 cursor-pointer border-l-rose-600 py-2 pl-5 text-sm text-gray-600 transition-all duration-100 ease-in-out hover:border-l-4 hover:text-rose-600">
-                                    <span class="mr-5">
-                                        <i class="ri-checkbox-blank-circle-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <button class="w-full" id='popoverToggleAssessment'>
+                                        <a href="<?= route_to('dataassessment'); ?>" class="iconCenter flex items-center mx-2 cursor-pointer py-2 pl-5 text-sm text-gray-600 transition-all duration-100 ease-in-out hover:text-rose-600">
+                                            <span class="mr-5">
+                                                <i class="ri-checkbox-blank-circle-line text-xl"></i>
+                                            </span>
+                                            <span class="sidebarHidden">Assessment</span>
+                                    </a>
+                                    </button>
+                                    <span 
+                                        id="popoverContentAssessment" 
+                                        class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
+                                    >
+                                        Data Assessment
                                     </span>
-                                    <span class="sidebarHidden">Assessment</span>
-                                </a>
+                                </div>
                             </ul>
                         </div>
-                        <a href="<?= route_to('calculationprocess'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <i class="ri-calculator-line align-middle text-xl"></i>
-                            <span class="sidebarHidden ml-4">Calculation Process</span>
-                        </a>
-                        <a href="<?= route_to('decissionresult'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <i class="ri-flag-2-line align-middle text-xl"></i>
-                            <span class="sidebarHidden ml-4">Decission Result</span>
-                        </a>
-                        <a href="<?= route_to('history'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <i class="ri-file-history-line align-middle text-xl"></i>
-                            <span class="sidebarHidden ml-4">History</span>
-                        </a>
-                        <a href="<?= route_to('usersdata'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <i class="ri-user-6-line align-middle text-xl"></i>
-                            <span class="sidebarHidden ml-4">Users Data</span>
-                        </a>
+                        <div>
+                            <button class="w-full" id="popoverToggleCalculation">
+                                <a href="<?= route_to('calculationprocess'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+                                    <i class="ri-calculator-line align-middle text-xl"></i>
+                                    <span class="sidebarHidden ml-4">Calculation Process</span>
+                                </a>
+                            </button>
+                            <span 
+                                id="popoverContentCalculation" 
+                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
+                            >
+                                Calculation Process
+                            </span>
+                        </div>
+                        <div>
+                            <button class="w-full" id="popoverToggleDecission">
+                                <a href="<?= route_to('decissionresult'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+                                    <i class="ri-flag-2-line align-middle text-xl"></i>
+                                    <span class="sidebarHidden ml-4">Decission Result</span>
+                                </a>
+                            </button>
+                            <span 
+                                id="popoverContentDecission" 
+                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
+                            >
+                                Decission Result
+                            </span>
+                        </div>
+                        <div>
+                            <button class="w-full" id="popoverToggleHistory">
+                                <a href="<?= route_to('history'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+                                    <i class="ri-file-history-line align-middle text-xl"></i>
+                                    <span class="sidebarHidden ml-4">History</span>
+                                </a>
+                            </button>
+                            <span 
+                                id="popoverContentHistory" 
+                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
+                            >
+                                History
+                            </span>
+                        </div>
+                        <div>
+                            <button class="w-full" id="popoverToggleUsers">
+                                <a href="<?= route_to('usersdata'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+                                    <i class="ri-user-6-line align-middle text-xl"></i>
+                                    <span class="sidebarHidden ml-4">Users Data</span>
+                                </a>
+                            </button>
+                            <span 
+                                id="popoverContentUsers" 
+                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
+                            >
+                                Users Data
+                            </span>
+                        </div>
                     </nav>
                     <div class="px-8 mt-4">
                         <div class="border-b-2 border-gray-100"></div>
                     </div>
                     <span class="sidebarCenter flex ml-[18px] mt-10 mb-2 text-xxs font-semibold text-[#757575] uppercase">System</span>
                     <nav>
-                        <a id="toggleBtn" type="button" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <i class="ri-expand-width-line align-middle text-xl"></i>
-                            <span class="sidebarHidden ml-4">Button</span>
-                        </a>
-                        <a href="logout" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <i class="ri-logout-circle-r-line align-middle text-xl"></i>
-                            <span class="sidebarHidden ml-4">Logout</span>
-                        </a>
-                        <button onclick="toggleNotification()" class="sidebarCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <span>notif all</span>
+                        <button class="w-full relative">
+                            <a id="toggleBtn" type="button" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+                                <i class="ri-expand-width-line align-middle text-xl"></i>
+                                <span class="sidebarHidden ml-4">Resize</span>
+                            </a>
                         </button>
-                        <button onclick="toggleSuccessNotif()" class="sidebarCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <span>success</span>
+                        <!-- <button class="w-full relative">
+                            <a type="button" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+                                <i class="ri-toggle-line align-middle text-xl"></i>
+                                <i class="ri-toggle-fill align-middle text-xl"></i>
+                            </a>
+                        </button> -->
+                        <button class="w-full mt-auto" id="popoverToggleLogout">
+                            <a href="logout" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+                                <i class="ri-logout-circle-r-line align-middle text-xl"></i>
+                                <span class="sidebarHidden ml-4">Logout</span>
+                            </a>
+                            <a 
+                                id="popoverContentLogout" 
+                                href="logout"
+                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
+                            >
+                                Logout
+                            </a>
                         </button>
-                        <button onclick="toggleFailedNotif()" class="sidebarCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <span>error</span>
-                        </button>
-                        <button onclick="toggleWarningNotif()" class="sidebarCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                            <span>warning</span>
-                        </button>
-
                     </nav>
                 </div>
             </div>
         </div>
-
+        
         <!-- MAIN CONTENT -->
         <div class="bg-white flex-1 rounded-tl-lg rounded-bl-lg overflow-y-auto overflow-x-hidden">
             <!-- END HEADER -->

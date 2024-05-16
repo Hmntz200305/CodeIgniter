@@ -11,9 +11,10 @@
 <script src="<?= base_url('js/history.js'); ?>"></script>
 <script src="<?= base_url('js/usersData.js'); ?>"></script>
 
-<!-- LIBRARY -->
-<script src="<?= base_url('library/tabs.js'); ?>"></script>
-<script src="<?= base_url('library/collapse.js'); ?>"></script>
+<!-- COMPONENT -->
+<script src="<?= base_url('component/tabs.js'); ?>"></script>
+<script src="<?= base_url('component/collapse.js'); ?>"></script>
+<script src="<?= base_url('component/popover.js'); ?>"></script>
 
 </html>
 <!-- END FOOTER -->

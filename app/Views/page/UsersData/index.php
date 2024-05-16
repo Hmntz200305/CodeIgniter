@@ -21,8 +21,8 @@
     </script>
 <?php endif; ?>
 
-<div class="p-4 space-y-4">
-    <div class="flex justify-between items-center p-2 rounded-tl-lg rounded-bl-lg">
+<div class="p-6">
+    <div class="flex justify-between items-center rounded-tl-lg rounded-bl-lg">
         <div>
             <ul class="space-x-1 flex items-center whitespace-nowrap font-medium text-sm text-gray-500">
                 <li class="inline-flex items-center space-x-1">
@@ -42,60 +42,61 @@
         <?= view('layout/profile'); ?>
     </div>
 </div>
-<div class="px-4">
-    <div class="p-2 flex flex-col">
+
+<div class="px-6">
+    <div class="py-4 flex flex-col">
         <span class="text-lg font-bold">Users Data</span>
         <span class="text-sm">Managing and accessing information related to user profiles, permissions, and activities within the system.</span>
     </div>
+    <div>
+        <a href="<?= route_to('usersdata/addusers'); ?>">
+            <button class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
+                <i class="ri-user-add-line"></i>
+                <span>Add Users</span>
+            </button>
+        </a>
+        <table id="usersData" class="display nowrap" style="width:100%">
+            <thead class="text-sm font-bold">
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="text-sm font-thin">
+                <?php foreach ($userData as $index => $row) : ?>
+                    <tr>
+                        <td><?php echo $index + 1 ?></td>
+                        <td><?php echo $row['nama']; ?></td>
+                        <td><?php echo $row['username']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                        <td class="text-rose-600 font-semibold"><?php echo $row['id_user_level']; ?></td>
+                        <td>
+                            <div class="flex items-center space-x-2 text-lg">
+                                <button onclick="showEditUser(<?php echo $row['id']; ?>)" class="text-green-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
+                                    <i class="ri-edit-circle-line"></i>
+                                </button>
+                                <!-- <button class="userdata-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $row['id']; ?>">
+                                    <i class=" ri-delete-bin-3-line"></i>
+                                </button> -->
+                                <form action="usersdata/deleteprocess/<?php echo $row['id']; ?>" method="POST" id="deleteForm_<?php echo $row['id']; ?>" onsubmit="return showConfirmationDeleteModalUserData(this);">
+                                    <button type="submit" class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
+                                        <i class="ri-delete-bin-3-line"></i>
+                                    </button>
+                                    <input type="hidden" name="_method" value="DELETE">
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 
-<div class="p-4">
-    <a href="<?= route_to('usersdata/addusers'); ?>">
-        <button class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
-            <i class="ri-user-add-line"></i>
-            <span>Add Users</span>
-        </button>
-    </a>
-    <table id="usersData" class="display nowrap" style="width:100%">
-        <thead class="text-sm font-bold">
-            <tr>
-                <th>No.</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody class="text-sm font-thin">
-            <?php foreach ($userData as $index => $row) : ?>
-                <tr>
-                    <td><?php echo $index + 1 ?></td>
-                    <td><?php echo $row['nama']; ?></td>
-                    <td><?php echo $row['username']; ?></td>
-                    <td><?php echo $row['email']; ?></td>
-                    <td class="text-rose-600 font-semibold"><?php echo $row['id_user_level']; ?></td>
-                    <td>
-                        <div class="flex items-center space-x-2 text-lg">
-                            <button onclick="showEditUser(<?php echo $row['id']; ?>)" class="text-green-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
-                                <i class="ri-edit-circle-line"></i>
-                            </button>
-                            <!-- <button class="userdata-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $row['id']; ?>">
-                                <i class=" ri-delete-bin-3-line"></i>
-                            </button> -->
-                            <form action="usersdata/deleteprocess/<?php echo $row['id']; ?>" method="POST" id="deleteForm_<?php echo $row['id']; ?>" onsubmit="return showConfirmationDeleteModalUserData(this);">
-                                <button type="submit" class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
-                                    <i class="ri-delete-bin-3-line"></i>
-                                </button>
-                                <input type="hidden" name="_method" value="DELETE">
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
 
 <div id="modalDeleteUsers" class="flex fixed inset-0 p-4 flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] hidden">
     <div class="w-full max-w-md bg-white shadow-lg rounded-md p-6 relative">

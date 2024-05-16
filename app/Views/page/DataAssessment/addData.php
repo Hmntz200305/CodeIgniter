@@ -21,8 +21,8 @@
     </script>
 <?php endif; ?>
 
-<div class="p-4 space-y-4">
-    <div class="flex justify-between items-center p-2 rounded-tl-lg rounded-bl-lg">
+<div class="p-6">
+    <div class="flex justify-between items-center rounded-tl-lg rounded-bl-lg">
         <div>
             <ul class="space-x-1 flex items-center whitespace-nowrap font-medium text-sm text-gray-500">
                 <li class="inline-flex items-center space-x-1">
@@ -51,14 +51,11 @@
     </div>
 </div>
 
-<div class="px-4">
-    <div class="p-2 flex flex-col">
+<div class="px-6">
+    <div class="py-4 flex flex-col">
         <span class="text-lg font-bold">Data Assessment</span>
-        <span class="text-sm">???</span>
+        <span class="text-sm">Effortlessly inputting additional data sources for expanded analysis capabilities.</span>
     </div>
-</div>
-
-<div class="p-4">
     <div class="mt-10 grid sm:grid-cols-1 lg:grid-cols-2">
         <div class="flex flex-col">
             <span class="font-medium mb-4 text-gray-600">Value Explanation:</span>
@@ -148,7 +145,7 @@
                                         select.classList.add('hidden');
                                         label.classList.add('hidden');
                                     }
-
+    
                                     checkbox.addEventListener('change', function() {
                                         if (this.checked) {
                                             select.classList.remove('hidden');
@@ -161,7 +158,7 @@
                                 });
                             });
                         </script>
-
+    
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -176,5 +173,6 @@
         </form>
     </div>
 </div>
+
 
 <?= view('layout/footer'); ?>
