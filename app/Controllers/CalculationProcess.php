@@ -38,6 +38,7 @@ class CalculationProcess extends BaseController
         foreach ($kriteria as $kriteria_item) {
             $bobot_kriteria_pencocokan[$kriteria_item['id_kriteria']] = $this->kriteriaModel->getKriteria($kriteria_item['id_kriteria']);
         }
+
         $data = [
             'alternatif' => $alternatif,
             'kriteria' => $kriteria,

@@ -438,20 +438,47 @@
                                 ?>
                             <?php endforeach; ?>
                             <?php
-                            $total_preference_values[$alternatif_item['nama_alternatif']] = $total_preference_value;
+                            $arrays = [
+                                'id_alternatif' => $alternatif_item['id_alternatif'],
+                                'nama_alternatif' => $alternatif_item['nama_alternatif'],
+                                'total_value' => $total_preference_value
+                            ];
+                            $total_preference_values[] = $arrays;
+
                             ?>
                         <?php endforeach; ?>
                         <?php
-                        arsort($total_preference_values);
-                        $ranking = 1;
+                        // Mengurutkan array berdasarkan nilai total preferensi
+                        usort($total_preference_values, function ($a, $b) {
+                            return $b['total_value'] <=> $a['total_value'];
+                        });
+
+                        $ranking = 1; // Mulai dari peringkat 1
+                        ?>;
+                        <?php $kalkulasiModel = new \App\Models\CalculationModel(); ?>
+                        <?php $hasilModel = new \App\Models\ResultModel(); ?>
+                        <?php
+                        $totalHasil = $hasilModel->getLastNamaHasil();
+                        $last_number = intval(preg_replace('/[^0-9]+/', '', $totalHasil));
+                        $next_number = $last_number + 1;
+                        $nama_hasil = "PO" . $next_number;
                         ?>
-                        <?php foreach ($total_preference_values as $alternatif_name => $preference_value) : ?>
+                        <?php foreach ($total_preference_values as $row) : ?>
                             <tr>
                                 <td><?= $no++; ?></td>
-                                <td><?= $alternatif_name ?></td>
-                                <td><?= round($preference_value, 2) ?></td>
+                                <td><?= $row['nama_alternatif'] ?></td>
+                                <td><?= round($row['total_value'], 2) ?></td>
                                 <td class="bg-rose-600 text-white"><?= $ranking++ ?></td>
                             </tr>
+                            <?php
+                            if (isset($row['id_alternatif'], $row['total_value']) && $row['total_value'] != 0) {
+                                $total = $kalkulasiModel->hasil_perhitungan($nama_hasil, $row['id_alternatif'], $row['total_value']);
+                            } else {
+                                // Lakukan tindakan alternatif jika salah satu variabel tidak terdefinisi atau total_value adalah 0
+                                $total = null; // Atau tindakan lainnya sesuai kebutuhan
+                            }
+                            ?>
+                            ?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

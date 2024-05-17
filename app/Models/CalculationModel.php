@@ -46,4 +46,16 @@ class CalculationModel extends Model
         }
         return $bobotKriteria;
     }
+
+    public function hasil_perhitungan($nama_hasil, $id_alternatif, $total_nilai)
+    {
+        $data = [
+            'nama_hasil' => $nama_hasil,
+            'periode_hasil' => date('Y'),
+            'id_alternatif' => $id_alternatif,
+            'total_nilai' => $total_nilai
+        ];
+
+        $this->db->table('hasil_perhitungan')->insert($data);
+    }
 }

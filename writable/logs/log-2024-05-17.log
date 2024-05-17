@@ -2459,3 +2459,565 @@ INFO - 2024-05-17 05:52:20 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-05-17 05:52:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-17 05:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-17 05:55:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:15:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:26:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:26:07 --> ErrorException: Undefined variable $hasilModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 458.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(458): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $hasilModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 458)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(52): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:28:32 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 461.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(461): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 461)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(52): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:28:32 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 461.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(461): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 461)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(52): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:28:33 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 461.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(461): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 461)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(52): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:28:33 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 461.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(461): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 461)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(52): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:28:33 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 461.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(461): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 461)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(52): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:28:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:28:34 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 461.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(461): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 461)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(52): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:31:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:31:28 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 461.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(461): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 461)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(52): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:34:49 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 461.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(461): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 461)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:34:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:34:50 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 461.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(461): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 461)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:37:38 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 461.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(461): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 461)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:38:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:38:05 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 454.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 4 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:39:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:44:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:45:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:45:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:48:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:49:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:49:43 --> TypeError: round(): Argument #1 ($num) must be of type int|float, array given
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 463.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(463): round([...], 2)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:51:20 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 469.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(469): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 469)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:52:15 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 469.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(469): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 469)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:53:01 --> ErrorException: Undefined property: CodeIgniter\View\View::$kalkulasiModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 471.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$kalkulasiModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 471)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:53:36 --> ErrorException: Undefined property: CodeIgniter\View\View::$hasilModel
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 471.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$hasilModel', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php', 471)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 06:53:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:54:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:59:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:59:55 --> BadMethodCallException: Call to undefined method App\Models\ResultModel::order_by
+[Method: GET, Route: calculationprocess]
+in SYSTEMPATH\Model.php on line 921.
+ 1 APPPATH\Models\ResultModel.php(18): CodeIgniter\Model->__call('order_by', [...])
+ 2 APPPATH\Views\page\CalculationProcess\index.php(457): App\Models\ResultModel->getLastNamaHasil()
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 6 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 07:00:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:00:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:05:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:06:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:06:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:06:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 07:09:32 --> TypeError: arsort(): Argument #1 ($array) must be of type array, null given
+[Method: GET, Route: calculationprocess]
+in APPPATH\Views\page\CalculationProcess\index.php on line 451.
+ 1 APPPATH\Views\page\CalculationProcess\index.php(451): arsort(null)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\CalculationProcess\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/CalculationProcess/index', [], true)
+ 5 APPPATH\Controllers\CalculationProcess.php(53): view('page/CalculationProcess/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CalculationProcess->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalculationProcess))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 07:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:12:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 07:13:54 --> ErrorException: Undefined variable $data
+[Method: GET, Route: decissionresult]
+in APPPATH\Views\page\DecissionResult\index.php on line 47.
+ 1 APPPATH\Views\page\DecissionResult\index.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php', 47)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/DecissionResult/index', [], true)
+ 5 APPPATH\Controllers\DecissionResult.php(30): view('page/DecissionResult/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DecissionResult->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DecissionResult))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 07:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 07:16:41 --> ErrorException: Undefined variable $data
+[Method: GET, Route: decissionresult]
+in APPPATH\Views\page\DecissionResult\index.php on line 47.
+ 1 APPPATH\Views\page\DecissionResult\index.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php', 47)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/DecissionResult/index', [], true)
+ 5 APPPATH\Controllers\DecissionResult.php(32): view('page/DecissionResult/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DecissionResult->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DecissionResult))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 07:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:18:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:20:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 07:20:10 --> ErrorException: Array to string conversion
+[Method: GET, Route: decissionresult]
+in APPPATH\Views\page\DecissionResult\index.php on line 56.
+ 1 APPPATH\Views\page\DecissionResult\index.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php', 56)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/DecissionResult/index', [], true)
+ 5 APPPATH\Controllers\DecissionResult.php(32): view('page/DecissionResult/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DecissionResult->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DecissionResult))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 07:20:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 07:20:11 --> ErrorException: Array to string conversion
+[Method: GET, Route: decissionresult]
+in APPPATH\Views\page\DecissionResult\index.php on line 56.
+ 1 APPPATH\Views\page\DecissionResult\index.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php', 56)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/DecissionResult/index', [], true)
+ 5 APPPATH\Controllers\DecissionResult.php(32): view('page/DecissionResult/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DecissionResult->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DecissionResult))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 07:20:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 07:21:47 --> ErrorException: Undefined array key "products"
+[Method: GET, Route: decissionresult]
+in APPPATH\Views\page\DecissionResult\index.php on line 50.
+ 1 APPPATH\Views\page\DecissionResult\index.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "products"', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php', 50)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/DecissionResult/index', [], true)
+ 5 APPPATH\Controllers\DecissionResult.php(32): view('page/DecissionResult/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DecissionResult->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DecissionResult))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 07:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 07:21:59 --> ErrorException: Undefined array key "value"
+[Method: GET, Route: decissionresult]
+in APPPATH\Views\page\DecissionResult\index.php on line 59.
+ 1 APPPATH\Views\page\DecissionResult\index.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "value"', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php', 59)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/DecissionResult/index', [], true)
+ 5 APPPATH\Controllers\DecissionResult.php(32): view('page/DecissionResult/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DecissionResult->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DecissionResult))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 07:22:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:24:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 07:24:12 --> ErrorException: Undefined array key "products"
+[Method: GET, Route: decissionresult]
+in APPPATH\Views\page\DecissionResult\index.php on line 49.
+ 1 APPPATH\Views\page\DecissionResult\index.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "products"', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php', 49)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/DecissionResult/index', [], true)
+ 5 APPPATH\Controllers\DecissionResult.php(32): view('page/DecissionResult/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DecissionResult->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DecissionResult))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 07:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 07:24:19 --> ErrorException: Undefined array key "total_value"
+[Method: GET, Route: decissionresult]
+in APPPATH\Views\page\DecissionResult\index.php on line 62.
+ 1 APPPATH\Views\page\DecissionResult\index.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total_value"', 'C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php', 62)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\CodeIgniter\\app\\Views\\page\\DecissionResult\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/DecissionResult/index', [], true)
+ 5 APPPATH\Controllers\DecissionResult.php(32): view('page/DecissionResult/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DecissionResult->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DecissionResult))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\CodeIgniter\\public\\index.php')
+INFO - 2024-05-17 07:24:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:26:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:27:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:27:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:28:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:32:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:33:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:33:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:33:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:34:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:34:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 07:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
