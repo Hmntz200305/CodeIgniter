@@ -68,7 +68,7 @@ class AssessmentModel extends Model
                     'id_kriteria' => $id_kriteria,
                     'nilai' => $nilai
                 ];
-                $ActivityLog->saveActivityLog("Penilaian Alternatif ID $id_alternatif pada Kriteria ID $id_kriteria ditambahkan", 'penilaian', 'Update');
+                $ActivityLog->saveActivityLog("Penilaian Alternatif ID $id_alternatif pada Kriteria ID $id_kriteria ditambahkan", 'penilaian', 'Add');
                 $this->insert($data_insert);
             }
         }
