@@ -49,12 +49,14 @@
         <span class="text-sm">Defining specific criteria for refining data selection and analysis.</span>
     </div>
     <div>
-        <a href="<?= route_to('datacriteria/adddata'); ?>">
-            <button class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
-                <i class="ri-file-add-line"></i>
-                <span>Add Data</span>
-            </button>
-        </a>
+        <?php if (session()->get('id_user_level') == 2) : ?>
+            <a href="<?= route_to('datacriteria/adddata'); ?>">
+                <button class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
+                    <i class="ri-file-add-line"></i>
+                    <span>Add Data</span>
+                </button>
+            </a>
+        <?php endif; ?>
         <table id="dataCriteria" class="display nowrap" style="width:100%">
             <thead class="text-sm font-bold">
                 <tr>
@@ -62,7 +64,9 @@
                     <th>Code</th>
                     <th>Criteria</th>
                     <th>Weight</th>
-                    <th class="w-24">Action</th>
+                    <?php if (session()->get('id_user_level') == 2) : ?>
+                        <th class="w-24">Action</th>
+                    <?php endif; ?>
                 </tr>
             </thead>
             <tbody class="text-sm font-thin">
@@ -72,22 +76,24 @@
                         <td><?php echo $row['kode_kriteria']; ?></td>
                         <td><?php echo $row['deskripsi_kriteria']; ?></td>
                         <td><?php echo $row['bobot_kriteria']; ?></td>
-                        <td>
-                            <div class="flex items-center space-x-2 text-lg">
-                                <button onclick="showEditCriteria(<?php echo $row['id_kriteria']; ?>)" class="text-green-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
-                                    <i class="ri-edit-circle-line"></i>
-                                </button>
-                                <!-- <button class="datacriteria-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $row['id_kriteria']; ?>">
+                        <?php if (session()->get('id_user_level') == 2) : ?>
+                            <td>
+                                <div class="flex items-center space-x-2 text-lg">
+                                    <button onclick="showEditCriteria(<?php echo $row['id_kriteria']; ?>)" class="text-green-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
+                                        <i class="ri-edit-circle-line"></i>
+                                    </button>
+                                    <!-- <button class="datacriteria-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $row['id_kriteria']; ?>">
                                     <i class="ri-delete-bin-3-line"></i>
                                 </button> -->
-                                <form action="datacriteria/deleteprocess//<?php echo $row['id_kriteria']; ?>" method="POST" id="deleteForm_<?php echo $row['id_kriteria']; ?>" onsubmit="return showConfirmationDeleteModalCriteria(this);">
-                                    <button type="submit" class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
-                                        <i class="ri-delete-bin-3-line"></i>
-                                    </button>
-                                    <input type="hidden" name="_method" value="DELETE">
-                                </form>
-                            </div>
-                        </td>
+                                    <form action="datacriteria/deleteprocess//<?php echo $row['id_kriteria']; ?>" method="POST" id="deleteForm_<?php echo $row['id_kriteria']; ?>" onsubmit="return showConfirmationDeleteModalCriteria(this);">
+                                        <button type="submit" class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
+                                            <i class="ri-delete-bin-3-line"></i>
+                                        </button>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                    </form>
+                                </div>
+                            </td>
+                        <?php endif; ?>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

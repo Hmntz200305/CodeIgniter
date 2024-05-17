@@ -5,12 +5,16 @@ namespace App\Controllers;
 class DataCriteria extends BaseController
 {
     protected $kriteriaModel;
+    protected $penilaianModel;
+    protected $ActivityLog;
     protected $session;
     protected $helpers = ['form'];
 
     public function __construct()
     {
         $this->kriteriaModel = new \App\Models\CriteriaModel();
+        $this->penilaianModel = new \App\Models\AssessmentModel();
+        $this->ActivityLog = new  \App\Models\ActivityLogModel();
         $this->session = \Config\Services::session();
     }
 
@@ -64,6 +68,7 @@ class DataCriteria extends BaseController
 
         $insert = $this->kriteriaModel->addProcess($kode_kriteria, $deskripsi_kriteria, $bobot_kriteria);
         if ($insert) {
+            $this->ActivityLog->saveActivityLog("Kode $kode_kriteria ditambahkan", 'kriteria', 'Add');
             $this->session->setFlashdata('message', 'Kriteria berhasil ditambahkan!');
             $this->session->setFlashdata('message_type', 'success');
             return redirect()->back();
@@ -76,12 +81,19 @@ class DataCriteria extends BaseController
 
     public function deleteprocess($id_kriteria)
     {
-        $delete = $this->kriteriaModel->delete($id_kriteria);
-
-        if ($delete) {
-            $this->session->setFlashdata('message', 'Kriteria berhasil dihapus!');
-            $this->session->setFlashdata('message_type', 'success');
-            return redirect()->back();
+        $deleteKriteria = $this->kriteriaModel->delete($id_kriteria);
+        if ($deleteKriteria) {
+            $deletePenilaian = $this->penilaianModel->deleteByKriteriaId($id_kriteria);
+            if ($deletePenilaian) {
+                $this->ActivityLog->saveActivityLog("ID $id_kriteria dihapus", 'kriteria', 'Delete');
+                $this->session->setFlashdata('message', 'Kriteria berhasil dihapus!');
+                $this->session->setFlashdata('message_type', 'success');
+                return redirect()->back();
+            } else {
+                $this->session->setFlashdata('message', 'Gagal menghapus data!');
+                $this->session->setFlashdata('message_type', 'error');
+                return redirect()->back();
+            }
         } else {
             $this->session->setFlashdata('message', 'Gagal menghapus data!');
             $this->session->setFlashdata('message_type', 'error');
@@ -154,6 +166,7 @@ class DataCriteria extends BaseController
 
         $update = $this->kriteriaModel->editProcess($id_kriteria, $kode_kriteria, $deskripsi_kriteria,  $bobot_kriteria);
         if ($update) {
+            $this->ActivityLog->saveActivityLog("ID $id_kriteria diupdate", 'kriteria', 'Update');
             $this->session->setFlashdata('message', 'Kriteria berhasil diupdate!');
             $this->session->setFlashdata('message_type', 'success');
             return redirect()->back();

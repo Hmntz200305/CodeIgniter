@@ -51,19 +51,22 @@
     </div>
     <div>
         <div class="flex space-x-4">
-            <a href="<?= route_to('dataassessment/adddata'); ?>">
-                <button class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
-                    <i class="ri-file-add-line"></i>
-                    <span>Add Data</span>
-                </button>
-            </a>
-            <form action="dataassessment/clearprocess" method="POST" onsubmit="return showConfirmationClearModalAssesment(this);">
-                <button type="submit" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
-                    <i class="ri-eraser-line"></i>
-                    <span>Clear Table</span>
-                </button>
-                <input type="hidden" name="_method" value="DELETE">
-            </form>
+            <?php if (session()->get('id_user_level') == 2) : ?>
+                <a href="<?= route_to('dataassessment/adddata'); ?>">
+                    <button class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
+                        <i class="ri-file-add-line"></i>
+                        <span>Add Data</span>
+                    </button>
+                </a>
+
+                <form action="dataassessment/clearprocess" method="POST" onsubmit="return showConfirmationClearModalAssesment(this);">
+                    <button type="submit" class="mb-2 text-gray-600 text-sm font-medium hover:text-rose-600 border-l-4 hover:border-rose-600 py-2 px-3 rounded">
+                        <i class="ri-eraser-line"></i>
+                        <span>Clear Table</span>
+                    </button>
+                    <input type="hidden" name="_method" value="DELETE">
+                </form>
+            <?php endif; ?>
         </div>
         <table id="dataAssessment" class="display nowrap" style="width:100%">
             <thead class="text-sm font-bold">
@@ -73,7 +76,9 @@
                     <th>Alternative</th>
                     <th>Criteria</th>
                     <th>Value</th>
-                    <th class="w-24">Action</th>
+                    <?php if (session()->get('id_user_level') == 2) : ?>
+                        <th class="w-24">Action</th>
+                    <?php endif; ?>
                 </tr>
             </thead>
             <tbody class="text-sm font-thin">
@@ -84,22 +89,24 @@
                         <td><?php echo $data['alternatif']; ?></td>
                         <td><?php echo $data['kriteria']; ?></td>
                         <td><?php echo $data['nilai']; ?></td>
-                        <td>
-                            <div class="flex items-center space-x-2 text-lg">
-                                <button onclick="showEditAssessment(<?php echo $data['id_penilaian']; ?>)" class="text-green-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
-                                    <i class="ri-edit-circle-line"></i>
-                                </button>
-                                <!-- <button class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $data['id_penilaian']; ?>">
+                        <?php if (session()->get('id_user_level') == 2) : ?>
+                            <td>
+                                <div class="flex items-center space-x-2 text-lg">
+                                    <button onclick="showEditAssessment(<?php echo $data['id_penilaian']; ?>)" class="text-green-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
+                                        <i class="ri-edit-circle-line"></i>
+                                    </button>
+                                    <!-- <button class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl" data-id="<?php echo $data['id_penilaian']; ?>">
                                     <i class="ri-delete-bin-3-line"></i>
                                 </button> -->
-                                <form action="dataassessment/deleteprocess/<?php echo $data['id_penilaian']; ?>" method="POST" id="deleteForm_<?php echo $data['id_penilaian']; ?>" onsubmit="return showConfirmationDeleteModalAssesment(this);">
-                                    <button type="submit" class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
-                                        <i class="ri-delete-bin-3-line"></i>
-                                    </button>
-                                    <input type="hidden" name="_method" value="DELETE">
-                                </form>
-                            </div>
-                        </td>
+                                    <form action="dataassessment/deleteprocess/<?php echo $data['id_penilaian']; ?>" method="POST" id="deleteForm_<?php echo $data['id_penilaian']; ?>" onsubmit="return showConfirmationDeleteModalAssesment(this);">
+                                        <button type="submit" class="dataassesment-delete-btn text-red-500 bg-white p-2 w-8 h-8 flex items-center justify-center rounded-xl">
+                                            <i class="ri-delete-bin-3-line"></i>
+                                        </button>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                    </form>
+                                </div>
+                            </td>
+                        <?php endif; ?>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -6,12 +6,16 @@ class DataAlternative extends BaseController
 {
 
     protected $alternatifModel;
+    protected $penilaianModel;
+    protected $ActivityLog;
     protected $session;
     protected $helpers = ['form'];
 
     public function __construct()
     {
         $this->alternatifModel = new \App\Models\AlternativeModel();
+        $this->penilaianModel = new \App\Models\AssessmentModel();
+        $this->ActivityLog = new  \App\Models\ActivityLogModel();
         $this->session = \Config\Services::session();
     }
 
@@ -60,6 +64,7 @@ class DataAlternative extends BaseController
         $nama_alternatif = $this->request->getPost('nama_alternatif');
         $insert = $this->alternatifModel->addProcess($kode_alternatif, $nama_alternatif);
         if ($insert) {
+            $this->ActivityLog->saveActivityLog("Kode $kode_alternatif ditambahkan", 'alternatif', 'Add');
             $this->session->setFlashdata('message', 'Berhasil menambahkan alternatif!');
             $this->session->setFlashdata('message_type', 'success');
             return redirect()->back();
@@ -73,12 +78,19 @@ class DataAlternative extends BaseController
 
     public function deleteprocess($id_alternatif)
     {
-        $delete = $this->alternatifModel->delete($id_alternatif);
-
-        if ($delete) {
-            $this->session->setFlashdata('message', 'Alternatif berhasil dihapus!');
-            $this->session->setFlashdata('message_type', 'success');
-            return redirect()->back();
+        $deleteAlternatif = $this->alternatifModel->delete($id_alternatif);
+        if ($deleteAlternatif) {
+            $deletePenilaian = $this->penilaianModel->deleteByAlternatifId($id_alternatif);
+            if ($deletePenilaian) {
+                $this->ActivityLog->saveActivityLog("ID $id_alternatif dihapus", 'alternatif', 'Delete');
+                $this->session->setFlashdata('message', 'Alternatif berhasil dihapus!');
+                $this->session->setFlashdata('message_type', 'success');
+                return redirect()->back();
+            } else {
+                $this->session->setFlashdata('message', 'Gagal menghapus data!');
+                $this->session->setFlashdata('message_type', 'error');
+                return redirect()->back();
+            }
         } else {
             $this->session->setFlashdata('message', 'Gagal menghapus data!');
             $this->session->setFlashdata('message_type', 'error');
@@ -146,6 +158,7 @@ class DataAlternative extends BaseController
 
         $update = $this->alternatifModel->editProcess($id_alternatif, $kode_alternatif, $nama_alternatif);
         if ($update) {
+            $this->ActivityLog->saveActivityLog("ID $id_alternatif diupdate", 'alternatif', 'Update');
             $this->session->setFlashdata('message', 'Alternatif berhasil diupdate!');
             $this->session->setFlashdata('message_type', 'success');
             return redirect()->back();

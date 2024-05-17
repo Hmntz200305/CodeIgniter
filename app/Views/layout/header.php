@@ -76,10 +76,7 @@
                                     <span class="sidebarHidden ml-4">Dashboard</span>
                                 </a>
                             </button>
-                            <span 
-                                id="popoverContentDashboard" 
-                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
-                            >
+                            <span id="popoverContentDashboard" class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300">
                                 Dashboard
                             </span>
                         </div>
@@ -100,10 +97,7 @@
                                             <span class="sidebarHidden">Alternative</span>
                                         </a>
                                     </button>
-                                    <span 
-                                        id="popoverContentAlternative" 
-                                        class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
-                                    >
+                                    <span id="popoverContentAlternative" class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300">
                                         Data Alternative
                                     </span>
                                 </div>
@@ -116,10 +110,7 @@
                                             <span class="sidebarHidden">Criteria</span>
                                         </a>
                                     </button>
-                                    <span 
-                                        id="popoverContentCriteria" 
-                                        class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
-                                    >
+                                    <span id="popoverContentCriteria" class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300">
                                         Data Criteria
                                     </span>
                                 </div>
@@ -130,12 +121,9 @@
                                                 <i class="ri-checkbox-blank-circle-line text-xl"></i>
                                             </span>
                                             <span class="sidebarHidden">Assessment</span>
-                                    </a>
+                                        </a>
                                     </button>
-                                    <span 
-                                        id="popoverContentAssessment" 
-                                        class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
-                                    >
+                                    <span id="popoverContentAssessment" class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300">
                                         Data Assessment
                                     </span>
                                 </div>
@@ -148,10 +136,7 @@
                                     <span class="sidebarHidden ml-4">Calculation Process</span>
                                 </a>
                             </button>
-                            <span 
-                                id="popoverContentCalculation" 
-                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
-                            >
+                            <span id="popoverContentCalculation" class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300">
                                 Calculation Process
                             </span>
                         </div>
@@ -162,41 +147,34 @@
                                     <span class="sidebarHidden ml-4">Decission Result</span>
                                 </a>
                             </button>
-                            <span 
-                                id="popoverContentDecission" 
-                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
-                            >
+                            <span id="popoverContentDecission" class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300">
                                 Decission Result
                             </span>
                         </div>
-                        <div>
-                            <button class="w-full" id="popoverToggleHistory">
-                                <a href="<?= route_to('history'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                                    <i class="ri-file-history-line align-middle text-xl"></i>
-                                    <span class="sidebarHidden ml-4">History</span>
-                                </a>
-                            </button>
-                            <span 
-                                id="popoverContentHistory" 
-                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
-                            >
-                                History
-                            </span>
-                        </div>
-                        <div>
-                            <button class="w-full" id="popoverToggleUsers">
-                                <a href="<?= route_to('usersdata'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                                    <i class="ri-user-6-line align-middle text-xl"></i>
-                                    <span class="sidebarHidden ml-4">Users Data</span>
-                                </a>
-                            </button>
-                            <span 
-                                id="popoverContentUsers" 
-                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
-                            >
-                                Users Data
-                            </span>
-                        </div>
+                        <?php if (session()->get('id_user_level') == 2) : ?>
+                            <div>
+                                <button class="w-full" id="popoverToggleHistory">
+                                    <a href="<?= route_to('history'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+                                        <i class="ri-file-history-line align-middle text-xl"></i>
+                                        <span class="sidebarHidden ml-4">History</span>
+                                    </a>
+                                </button>
+                                <span id="popoverContentHistory" class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300">
+                                    History
+                                </span>
+                            </div>
+                            <div>
+                                <button class="w-full" id="popoverToggleUsers">
+                                    <a href="<?= route_to('usersdata'); ?>" class="iconCenter flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+                                        <i class="ri-user-6-line align-middle text-xl"></i>
+                                        <span class="sidebarHidden ml-4">Users Data</span>
+                                    </a>
+                                </button>
+                                <span id="popoverContentUsers" class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300">
+                                    Users Data
+                                </span>
+                            </div>
+                        <?php endif; ?>
                     </nav>
                     <div class="px-8 mt-4">
                         <div class="border-b-2 border-gray-100"></div>
@@ -220,11 +198,7 @@
                                 <i class="ri-logout-circle-r-line align-middle text-xl"></i>
                                 <span class="sidebarHidden ml-4">Logout</span>
                             </a>
-                            <a 
-                                id="popoverContentLogout" 
-                                href="logout"
-                                class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300"
-                            >
+                            <a id="popoverContentLogout" href="logout" class="absolute z-10 p-3 text-sm font-semibold bg-rose-600 rounded-r-lg text-white w-max opacity-0 pointer-events-none transition-opacity duration-300">
                                 Logout
                             </a>
                         </button>
@@ -232,7 +206,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- MAIN CONTENT -->
         <div class="bg-white flex-1 rounded-tl-lg rounded-bl-lg overflow-y-auto overflow-x-hidden">
             <!-- END HEADER -->

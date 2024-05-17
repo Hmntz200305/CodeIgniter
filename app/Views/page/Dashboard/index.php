@@ -26,7 +26,7 @@
         <div class="flex justify-center items-center gap-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <div class="flex items-center justify-between space-x-8 px-4 py-8 bg-white rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105">
                 <div>
-                    <h1 class="text-lg font-bold">10</h1>
+                    <h1 class="text-lg font-bold"><?php echo $jumlahAlternatif; ?></h1>
                     <span class="text-sm">Alternative Data</span>
                 </div>
                 <div>
@@ -35,7 +35,7 @@
             </div>
             <div class="flex items-center justify-between space-x-8 px-4 py-8 bg-white rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105">
                 <div>
-                    <h1 class="text-lg font-bold">20</h1>
+                    <h1 class="text-lg font-bold"><?php echo $jumlahKriteria; ?></h1>
                     <span class="text-sm">Criteria Data</span>
                 </div>
                 <div>
@@ -44,7 +44,7 @@
             </div>
             <div class="flex items-center justify-between space-x-8 px-4 py-8 bg-white rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105">
                 <div>
-                    <h1 class="text-lg font-bold">30</h1>
+                    <h1 class="text-lg font-bold"><?php echo $jumlahPenilaian; ?></h1>
                     <span class="text-sm">Decission Result Data</span>
                 </div>
                 <div>
@@ -53,7 +53,7 @@
             </div>
             <div class="flex items-center justify-between space-x-8 px-4 py-8 bg-white rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105">
                 <div>
-                    <h1 class="text-lg font-bold">40</h1>
+                    <h1 class="text-lg font-bold"><?php echo $jumlahUserData; ?></h1>
                     <span class="text-sm">Users Data</span>
                 </div>
                 <div>

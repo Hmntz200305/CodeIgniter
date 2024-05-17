@@ -9,6 +9,7 @@ class DataAssessment extends BaseController
     protected $alternatifModel;
     protected $kriteriaModel;
     protected $penialianModel;
+    protected $ActivityLog;
     protected $session;
     protected $helpers = ['form'];
     use ResponseTrait;
@@ -18,6 +19,7 @@ class DataAssessment extends BaseController
         $this->alternatifModel = new \App\Models\AlternativeModel();
         $this->kriteriaModel = new \App\Models\CriteriaModel();
         $this->penialianModel = new \App\Models\AssessmentModel();
+        $this->ActivityLog = new  \App\Models\ActivityLogModel();
         $this->session = \Config\Services::session();
     }
 
@@ -124,6 +126,7 @@ class DataAssessment extends BaseController
         $delete = $this->penialianModel->delete($id_penilaian);
 
         if ($delete) {
+            $this->ActivityLog->saveActivityLog("ID $id_penilaian dihapus", 'penilaian', 'Delete');
             $this->session->setFlashdata('message', 'Penilaian Alternatif berhasil dihapus');
             $this->session->setFlashdata('message_type', 'success');
             return redirect()->back();
@@ -139,6 +142,7 @@ class DataAssessment extends BaseController
         $truncate = $this->penialianModel->truncateTable('penilaian');
 
         if ($truncate) {
+            $this->ActivityLog->saveActivityLog("Semua data dihapus", 'penilaian', 'Delete');
             $this->session->setFlashdata('message', 'Table berhasil dibersihkan');
             $this->session->setFlashdata('message_type', 'success');
             return redirect()->back();
@@ -184,6 +188,7 @@ class DataAssessment extends BaseController
         $nilai = $this->request->getPost('nilai_penilaian');
         $update = $this->penialianModel->editProcess($id_penilaian, $nilai);
         if ($update) {
+            $this->ActivityLog->saveActivityLog("ID $id_penilaian diupdate", 'penilaian', 'Update');
             $this->session->setFlashdata('message', 'Penilaian berhasil di update');
             $this->session->setFlashdata('message_type', 'success');
             return redirect()->back();

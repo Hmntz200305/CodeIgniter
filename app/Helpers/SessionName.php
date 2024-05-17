@@ -8,3 +8,11 @@ if (!function_exists('get_session_name')) {
         return $session->get('name');
     }
 }
+
+if (!function_exists('get_user_level')) {
+    function get_user_level()
+    {
+        $session = session();
+        return $session->get('id_user_level');
+    }
+}
