@@ -75,13 +75,15 @@ $(document).ready(function() {
 });
 
 // MODAL CLEAR
-const modalClearDecissionResult = document.querySelector('.modalClearDecissionResult');
-const modalClearDecissionResultOpen = document.getElementById('modalClearDecissionResultOpen');
-const modalClearDecissionResultClose = document.getElementById('modalClearDecissionResultClose');
+function showConfirmationClearModalDecicionResult(form) {
+    document.getElementById('modalClearDecissionResult').classList.remove('hidden');
+    document.getElementById('modalClearDecissionResultOpen').addEventListener('click', function() {
+        form.submit();
+    });
 
-modalClearDecissionResultOpen.addEventListener('click', () => {
-    modalClearDecissionResult.classList.toggle('hidden');
-});
-modalClearDecissionResultClose.addEventListener('click', () => {
-    modalClearDecissionResult.classList.add('hidden');
-});
+    document.getElementById('modalClearDecissionResultClose').addEventListener('click', function() {
+        // Sembunyikan modal
+        document.getElementById('modalClearDecissionResult').classList.add('hidden');
+    });
+    return false;
+}

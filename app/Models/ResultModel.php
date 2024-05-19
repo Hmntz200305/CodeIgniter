@@ -24,4 +24,17 @@ class ResultModel extends Model
             return 'PO0';
         }
     }
+
+    public function truncateTable($table)
+    {
+        $query = $this->db->query("TRUNCATE TABLE $table");
+        $ActivityLog = new ActivityLogModel();
+
+        if ($query) {
+            $ActivityLog->saveActivityLog("Semua data dihapus dari tabel $table", $table, 'delete');
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -38,7 +38,10 @@ $routes->group('dataassessment', ['filter' => 'checkSession'], function ($routes
     $routes->get('logout', 'Login::logout');
 });
 $routes->get('calculationprocess', 'CalculationProcess::index', ['filter' => 'checkSession']);
-$routes->get('decissionresult', 'DecissionResult::index', ['filter' => 'checkSession']);
+$routes->group('decissionresult', ['filter' => 'checkSession'], function ($routes) {
+    $routes->get('/', 'DecissionResult::index');
+    $routes->delete('clearprocess', 'DecissionResult::clearprocess');
+});
 $routes->get('history', 'History::index', ['filter' => 'adminFilter']);
 $routes->group('usersdata', ['filter' => 'checkSession'], function ($routes) {
     $routes->get('/', 'UsersData::index');
